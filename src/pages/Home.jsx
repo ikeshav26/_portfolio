@@ -5,6 +5,7 @@ import img2 from '../../public/img2.png'
 import img3 from '../../public/img3.png'
 import BlobCursor from '../components/BlobCursor'
 import HomeContent from '../components/Content/HomeContent'
+import { FloatingDockDemo } from '../components/FloatingDoc'
 
 const Home = () => {
   return (
@@ -25,10 +26,13 @@ const Home = () => {
         useFilter={true}
         fastDuration={0.1}
         slowDuration={0.5}
-        zIndex={100}
+        zIndex={10}
       >
         <HomeContent/>
       </BlobCursor>
+      <div className="fixed top-7/8 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
+        <FloatingDockDemo/>
+      </div>
     </div>
   )
 }

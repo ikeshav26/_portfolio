@@ -21,7 +21,7 @@ export default function BlobCursor({
   slowDuration = 0.5,
   fastEase = "power3.out",
   slowEase = "power1.out",
-  zIndex = 100,
+  zIndex = 10, // Set lower than dock (e.g., dock uses 50)
   children,
 }) {
   const containerRef = useRef(null);
