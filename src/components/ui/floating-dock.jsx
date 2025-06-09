@@ -14,7 +14,7 @@ function IconContainer({ mouseX, title, icon, href }) {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         className="relative flex items-center justify-center rounded-full bg-gray-200 dark:bg-neutral-800
-          w-12 h-12 sm:w-10 sm:h-10 xs:w-9 xs:h-9"
+          w-12 h-12 sm:w-10 sm:h-10 xs:w-9 xs:h-9  hover:bg-neutral-700 hover:scale-104 transition-all duration-200"
       >
         <AnimatePresence>
           {hovered && (
@@ -22,7 +22,7 @@ function IconContainer({ mouseX, title, icon, href }) {
               initial={{ opacity: 0, y: 10, x: "-50%" }}
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="absolute -top-8 left-1/2 whitespace-nowrap rounded-md border border-gray-200 bg-gray-100 px-2 py-0.5 text-xs text-neutral-700 dark:border-neutral-900 dark:bg-neutral-800 dark:text-white"
+              className="absolute -top-8 left-1/2 whitespace-nowrap orbitron-custom rounded-md border border-gray-200 bg-gray-100 px-3 py-2 text-xs text-neutral-700 dark:border-neutral-900 dark:bg-neutral-800 dark:text-white"
             >
               {title}
             </motion.div>
@@ -46,7 +46,7 @@ export const FloatingDock = ({ items, className = '' }) => {
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
         "fixed inset-x-0 bottom-4 mx-auto w-fit flex gap-4 rounded-xl p-[2px] z-50 shadow-md",
-        "before:absolute before:inset-0 before:rounded-xl before:p-[2px] before:bg-gradient-to-tl before:from-zinc-300 before:via-zinc-800 before:to-zinc-600 before:content-[''] before:-z-10",
+        "before:absolute before:inset-0 before:rounded-xl before:p-[2px] before:bg-gradient-to-tl before:from-zinc-300 before:via-purple-400 before:to-zinc-400 before:content-[''] before:-z-10",
         className
       )}
     >

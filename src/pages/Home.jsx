@@ -12,7 +12,7 @@ const Home = () => {
     <div className=''>
       <BlobCursor className="absolute h-screen w-full"
         blobType="circle"
-        fillColor="#d4b21b"
+        fillColor="#B98AF3"
         trailCount={3}
         sizes={[30, 60, 40]}
         innerSizes={[10, 20, 15]}
