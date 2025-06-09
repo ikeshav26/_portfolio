@@ -1,1 +1,9 @@
-@import "tailwindcss"
+@import "tailwindcss";
+
+
+.orbitron-custom {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Replace 400 with your desired weight */
+  font-style: normal;
+}
