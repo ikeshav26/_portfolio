@@ -7,8 +7,8 @@ const Header = () => {
   const { theme, setTheme } = useTheme()
   return (
     <div>
-      <div>
-        <div className="absolute top-5 left-5 flex gap-2 text-3xl dark:text-white">
+      <div className=''>
+        <div className="fixed top-5 left-5 flex gap-2 text-3xl dark:text-white">
           <Link
             to="https://www.instagram.com/keshav_gilhotra_/?hl=en"
             target="_blank"
@@ -35,7 +35,7 @@ const Header = () => {
           </Link>
         </div>
 
-        <div className="absolute top-5 right-5 flex items-center dark:text-white justify-center gap-2  dark:bg-neutral-800 p-2 rounded-full  hover:bg-neutral-700 hover:scale-105 transition-all">
+        <div className="fixed top-5 right-5 flex items-center dark:text-white justify-center gap-2  dark:bg-neutral-800 p-2 rounded-full  hover:bg-neutral-700 hover:scale-105 transition-all">
           <label className="swap swap-rotate">
             
             <input
