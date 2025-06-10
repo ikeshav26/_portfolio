@@ -62,7 +62,7 @@ const App = () => {
             useFilter={true}
             fastDuration={0.1}
             slowDuration={0.5}
-            zIndex={0}
+            zIndex={-2}
           >
             {/* Render children inside BlobCursor for other pages */}
             <div style={{ position: 'relative', zIndex: 1 }}>
