@@ -46,7 +46,8 @@ export const FloatingDock = ({ items, className = '' }) => {
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
         "fixed inset-x-0 bottom-4 mx-auto w-fit flex gap-4 rounded-xl p-[2px] z-50 shadow-md",
-        "before:absolute before:inset-0 before:rounded-xl before:p-[2px] before:bg-gradient-to-tl before:from-zinc-300 before:via-purple-400 before:to-zinc-400 before:content-[''] before:-z-10",
+        "before:absolute before:inset-0 before:rounded-xl before:p-[2px] before:bg-gradient-to-tl before:from-zinc-300 before:via-purple-400 before:to-zinc-800 before:content-[''] before:-z-10",
+        "before:transition-colors before:duration-300", // <-- add transition for border/gradient
         className
       )}
     >

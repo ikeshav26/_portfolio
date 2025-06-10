@@ -5,7 +5,7 @@ import img2 from '../../public/img2.png'
 import img3 from '../../public/img3.png'
 import BlobCursor from '../components/BlobCursor'
 import HomeContent from '../components/Content/HomeContent'
-import { FloatingDockDemo } from '../components/FloatingDoc'
+
 
 const Home = () => {
   return (

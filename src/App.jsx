@@ -5,6 +5,7 @@ import Project from './pages/Project'
 import Contact from './pages/Contact'
 import About from './pages/About'
 import { FloatingDockDemo } from '../src/components/FloatingDoc'
+import Header from './components/Header'
 
 const App = () => {
   return (

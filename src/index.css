@@ -3,25 +3,28 @@
 
 
 .orbitron-custom {
-  font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400; /* Replace 400 with your desired weight */
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
   font-style: normal;
 }
+
 
  [data-theme="dark"] .back {
   background-color: #3F3F46; /* Dark background color */
   color: white;
  }
 
- [data-themee="light"] .back {
-  background-color: "zinc-900";
+ [data-theme="light"] .back {
+  background: none !important; /* Removes grid background for light theme */
+  background-color: #fff;      /* Optional: set a plain white background */
   color: black;
  }
 
  [data-theme="dark"] .textHome { /* Dark button color */
   color: white;
  }
+
+
 
   [data-theme="light"] .textHome { /* Light button color */
     color: black;
