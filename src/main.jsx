@@ -15,8 +15,8 @@ createRoot(document.getElementById('root')).render(
           <Aurora
             colorStops={["#fff", "#fff", "#fff"]}
             blend={0.5}
-            amplitude={1.0}
-            speed={0.5}
+            amplitude={3.0}
+            speed={1}
           />
           <div className="absolute inset-0 z-10">
             <App />
