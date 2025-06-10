@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
 
 .orbitron-custom {
@@ -7,3 +8,21 @@
   font-weight: 400; /* Replace 400 with your desired weight */
   font-style: normal;
 }
+
+ [data-theme="dark"] .back {
+  background-color: #3F3F46; /* Dark background color */
+  color: white;
+ }
+
+ [data-themee="light"] .back {
+  background-color: "zinc-900";
+  color: black;
+ }
+
+ [data-theme="dark"] .textHome { /* Dark button color */
+  color: white;
+ }
+
+  [data-theme="light"] .textHome { /* Light button color */
+    color: black;
+  }

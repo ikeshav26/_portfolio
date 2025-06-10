@@ -4,14 +4,17 @@ import './index.css'
 import App from './App.jsx'
 import { GridBackgroundDemo } from './components/Background.jsx'
 import { BrowserRouter } from 'react-router-dom'
+import { ThemeProvider } from './components/context/ThemeProvider.jsx'
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-    <GridBackgroundDemo>
+    <ThemeProvider>
+      <GridBackgroundDemo>
       <App />
     </GridBackgroundDemo>
+    </ThemeProvider>
     </BrowserRouter>
   </StrictMode>,
 )
