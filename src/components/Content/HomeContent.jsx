@@ -87,7 +87,7 @@ useGSAP(()=>{
         </div>
       </div>
 
-      <div className="absolute top-20 lg:-left-1/4 lg:top-1/5 w-60 h-60 md:h-80 md:w-80 mb-0 ">
+      <div className="animated absolute top-20 lg:-left-1/4 lg:top-1/5 w-60 h-60 md:h-80 md:w-80 mb-0 ">
         <img src={Sticker1}/>
       </div>
 
