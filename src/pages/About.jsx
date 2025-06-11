@@ -6,7 +6,7 @@ import Typewriter from 'typewriter-effect';
 
 const About = () => {
   return (
-    <div className="min-h-[150vh] w-full flex flex-col px-4 sm:px-6 md:px-14 pt-16 gap-10">
+    <div className="min-h-[150vh] lg:overflow-x-hidden w-full flex flex-col px-4 sm:px-6 md:px-14 pt-16 gap-10 scrollbar-hide overflow-auto">
       <div className="w-full max-w-7xl flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mt-10 mx-auto">
         
         {/* Image Section */}
@@ -25,7 +25,7 @@ const About = () => {
               <Typewriter
                 options={{
                   strings: [
-                    "Hi, I’m Keshav Gilhotra — an 18-year-old",
+                    "Hi, I’m Keshav Gilhotra —18-year-old",
                   ],
                   autoStart: true,
                   loop: true,
@@ -35,10 +35,7 @@ const About = () => {
               />
             </span>
             <span className="inline-block">
-              MERN Stack Developer passionate
-              about crafting beautiful and intuitive digital experiences. I love
-              combining design and development to build interfaces that are both
-              visually appealing and user-friendly.
+              MERN Stack Developer passionate about creating intuitive and visually engaging digital experiences that blend design with seamless functionality.
               <span className="inline-block">
                 I enjoy working with technologies like React.js, Node.js, and Figma,
                 turning ideas into smooth, functional, and modern web applications.
@@ -52,6 +49,8 @@ const About = () => {
       <div className="w-full mt-8">
         <GithubCommit />
       </div>
+      
+      
     </div>
   );
 };
