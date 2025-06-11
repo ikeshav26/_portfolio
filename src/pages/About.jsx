@@ -1,25 +1,57 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Header from "../components/Header";
 import GithubCommit from "../components/ui/GithubCommit";
 import sticker2 from "../../public/Nft Coding GIF.gif";
 import Typewriter from 'typewriter-effect';
+import gsap from "gsap";
+import AboutContent from "../components/Content/AboutContent";
 
 const About = () => {
+  const containerRef = useRef(null);
+  const imgRef = useRef(null);
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      containerRef.current,
+      { opacity: 0 },
+      { opacity: 1, duration: 1 }
+    );
+    gsap.fromTo(
+      imgRef.current,
+      { y: 60, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1.2, delay: 0.3, ease: "power3.out" }
+    );
+    gsap.fromTo(
+      textRef.current,
+      { y: 60, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1.2, delay: 0.6, ease: "power3.out" }
+    );
+  }, []);
+
   return (
-    <div className="min-h-[150vh] lg:overflow-x-hidden w-full flex flex-col px-4 sm:px-6 md:px-14 pt-16 gap-10 scrollbar-hide overflow-auto">
+    <div
+      ref={containerRef}
+      className="min-h-[150vh] lg:overflow-x-hidden w-full flex flex-col px-4 sm:px-6 md:px-14 pt-16 gap-10 scrollbar-hide overflow-auto"
+    >
       <div className="w-full max-w-7xl flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mt-10 mx-auto">
-        
         {/* Image Section */}
-        <div className="flex-shrink-0 flex justify-center md:justify-start w-full md:w-auto">
-          <img
-            className="w-48 h-36 sm:w-64 sm:h-48 md:w-80 md:h-60 lg:w-80 lg:h-60 rounded-xl object-cover"
+        <div
+          ref={imgRef}
+          className="flex-shrink-0 flex justify-center md:justify-start w-full md:w-auto"
+        >
+          <img loading="lazy"
+            className="w-48 h-36 sm:w-64 sm:h-48 md:w-80 md:h-60 lg:w-80 lg:h-60 rounded-xl object-cover z-1"
             src={sticker2}
             alt="sticker"
           />
         </div>
-        
+
         {/* Text Section */}
-        <div className="w-full md:w-auto flex justify-center md:justify-start">
+        <div
+          ref={textRef}
+          className="w-full md:w-auto flex justify-center md:justify-start"
+        >
           <p className="orbitron-custom max-w-xl text-base sm:text-lg md:text-xl flex flex-col gap-3 text-center md:text-left">
             <span className="inline-block tracking-wider text-purple-500">
               <Typewriter
@@ -49,8 +81,10 @@ const About = () => {
       <div className="w-full mt-8">
         <GithubCommit />
       </div>
-      
-      
+
+      <div>
+        <AboutContent/>
+      </div>
     </div>
   );
 };

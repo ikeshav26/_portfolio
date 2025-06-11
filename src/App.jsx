@@ -21,7 +21,7 @@ const App = () => {
     : ['#000000', '#333333'];
 
   return (
-    <div className="relative min-h-screen w-full scrollbar-hide overflow-auto">
+    <div className="relative min-h-screen w-full scrollbar-hide overflow-scroll">
       
       <div className="fixed top-7/8 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
         <FloatingDockDemo/>

@@ -11,14 +11,14 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <ThemeProvider>
         {/* Render Aurora as a background, then overlay App */}
-        <div className="relative min-h-screen w-full">
+        <div className="relative min-h-screen w-full ">
           <Aurora
             colorStops={["#fff", "#fff", "#fff"]}
             blend={0.5}
             amplitude={3.0}
             speed={1}
           />
-          <div className="absolute inset-0 z-10">
+          <div className="absolute inset-0 z-10 scrollbar-hide overflow-scroll">
             <App />
           </div>
         </div>

@@ -17,6 +17,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.16.0",
     "gsap": "^3.13.0",
+    "locomotive-scroll": "^4.1.4",
     "motion": "^12.16.0",
     "ogl": "^1.0.11",
     "react": "^19.1.0",
