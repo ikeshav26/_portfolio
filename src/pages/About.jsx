@@ -65,7 +65,17 @@ const About = () => {
         >
           <p className="orbitron-custom max-w-xl text-base sm:text-lg md:text-xl flex flex-col gap-3 text-center md:text-left">
             <span className="inline-block tracking-wider text-purple-500">
-              I am keshav gilhotra -18 year old
+              <Typewriter
+                options={{
+                  strings: [
+                    "Hi, I’m Keshav Gilhotra —18-year-old",
+                  ],
+                  autoStart: true,
+                  loop: false,
+                  cursor: "|",
+                  delay: 50,
+                }}
+              />
             </span>
             <span className="inline-block">
               MERN Stack Developer passionate about creating intuitive and visually engaging digital experiences that blend design with seamless functionality.
