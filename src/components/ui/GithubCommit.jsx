@@ -40,7 +40,7 @@ const GithubCommit = () => {
     <div className=''>
         <div className='orbitron-custom w-full h-full flex flex-col items-center justify-center px-2'>
       <h1 className='text-2xl font-bold mb-4'>My GitHub Contributions</h1>
-      <GitHubCalendar username="ikeshav26" theme={purpleTheme} colorScheme={isDarkMode ? 'dark' : 'light'} />
+      <GitHubCalendar username="ikeshav26" theme={purpleTheme} colorScheme={isDarkMode ? 'dark' : 'light'} blockSize={7.5}/>
     </div>
     </div>
   )

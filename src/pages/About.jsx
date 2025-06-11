@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
 import GithubCommit from "../components/ui/GithubCommit";
-import sticker2 from "../../public/Nft Coding GIF.gif";
 import Typewriter from 'typewriter-effect';
 
 const About = () => {
@@ -13,7 +12,7 @@ const About = () => {
         <div className="flex-shrink-0 flex justify-center md:justify-start w-full md:w-auto">
           <img
             className="w-48 h-36 sm:w-64 sm:h-48 md:w-80 md:h-60 lg:w-80 lg:h-60 rounded-xl object-cover"
-            src={sticker2}
+            src="/nft-coding.gif" // <-- Use public path, no import
             alt="sticker"
           />
         </div>
