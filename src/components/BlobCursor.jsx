@@ -114,7 +114,6 @@ export default function BlobCursor({
           </div>
         ))}
       </div>
-      {/* Content wrapper: relative, full size, scrollable, interactive */}
       <div className="relative w-full h-full flex items-center justify-center pointer-events-auto overflow-auto">
         {children}
       </div>

@@ -14,14 +14,14 @@ const Home = () => {
   // Decide color inside render so it always updates on theme change
   const particleColors = theme === 'dark' 
     ? ['#ffffff', '#cccccc']  // Whiteish particles in dark mode
-    : ['#000000', '#333333']; // Darkish particles in light mode
+    : ['#000000', '#333333']; 
 
   return (
     <div className='relative w-full min-h-screen'>
       {/* Particles absolutely positioned over the entire Home page */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <Particles
-          key={theme}  // Important: this forces remount when theme changes!
+          key={theme}  
           particleColors={particleColors}
           particleCount={200}
           particleSpread={10}
