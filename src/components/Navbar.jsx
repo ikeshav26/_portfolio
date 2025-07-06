@@ -80,7 +80,7 @@ const Navbar = () => {
                 </label>
 
                 <a
-                  href="/resume.pdf"
+                  href="/Resume.pdf"
                   download
                   className="border border-white/30 dark:border-white/20 hover:bg-white/20 dark:hover:bg-white/10 px-4 py-2 rounded-full font-medium transition-all duration-300 flex items-center text-base-content/80 hover:text-base-content backdrop-blur-sm drop-shadow-sm"
                 >
