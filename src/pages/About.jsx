@@ -29,13 +29,16 @@ const About = () => {
   const [typedText, setTypedText] = useState("");
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
+  const [isMouseMoving, setIsMouseMoving] = useState(false);
   const containerRef = useRef(null);
+  const mouseTimer = useRef(null);
+  const rafId = useRef(null);
   const navigate = useNavigate();
 
   // Typing animation words
   const words = ["Developer", "Student", "Learner", "Creator", "Innovator"];
 
-  // Typing effect
+  // Typing effect with reduced delay
   useEffect(() => {
     const currentWord = words[currentWordIndex];
     let timeout;
@@ -44,17 +47,17 @@ const About = () => {
       if (typedText.length < currentWord.length) {
         timeout = setTimeout(() => {
           setTypedText(currentWord.slice(0, typedText.length + 1));
-        }, 100);
+        }, 80); // Reduced from 100ms to 80ms
       } else {
         timeout = setTimeout(() => {
           setIsTyping(false);
-        }, 1000);
+        }, 800); // Reduced from 1000ms to 800ms
       }
     } else {
       if (typedText.length > 0) {
         timeout = setTimeout(() => {
           setTypedText(typedText.slice(0, -1));
-        }, 50);
+        }, 40); // Reduced from 50ms to 40ms
       } else {
         setCurrentWordIndex((prev) => (prev + 1) % words.length);
         setIsTyping(true);
@@ -64,23 +67,56 @@ const About = () => {
     return () => clearTimeout(timeout);
   }, [typedText, isTyping, currentWordIndex, words]);
 
-  // Mouse tracking
+  // Ultra-smooth mouse tracking with optimized performance
   useEffect(() => {
+    let lastTime = 0;
+    const throttleDelay = 16; // 60fps for ultra-smooth movement
+
     const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      const now = Date.now();
+      if (now - lastTime < throttleDelay) return;
+
+      lastTime = now;
+      setIsMouseMoving(true);
+
+      if (mouseTimer.current) {
+        clearTimeout(mouseTimer.current);
+      }
+
+      mouseTimer.current = setTimeout(() => {
+        setIsMouseMoving(false);
+      }, 500); // Reduced from 1000ms to 500ms
+
+      if (rafId.current) {
+        cancelAnimationFrame(rafId.current);
+      }
+
+      rafId.current = requestAnimationFrame(() => {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+      });
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      if (mouseTimer.current) {
+        clearTimeout(mouseTimer.current);
+      }
+      if (rafId.current) {
+        cancelAnimationFrame(rafId.current);
+      }
+    };
   }, []);
 
+  // Floating elements with reduced delays for faster animation
   const floatingElements = useMemo(() => {
-    return Array.from({ length: 5 }, (_, i) => ({
+    return Array.from({ length: 6 }, (_, i) => ({
       id: i,
-      x: 15 + i * 20,
-      y: 20 + i * 15,
-      delay: i * 2,
-      size: 20 + Math.random() * 15,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 200 + 100,
+      duration: Math.random() * 6 + 8, // Reduced from 10+15 to 6+8 for faster movement
+      delay: Math.random() * 2, // Reduced from 5 to 2 for quicker start
     }));
   }, []);
 
@@ -221,39 +257,41 @@ const About = () => {
       ref={containerRef}
       className="min-h-screen bg-base-100 pt-28 pb-24 px-6 sm:px-10 md:px-20 relative overflow-hidden"
     >
-      {/* Interactive floating background */}
-      <div className="fixed inset-0 pointer-events-none z-0 opacity-20">
+      {/* Ultra-smooth animated background blobs */}
+      <div className="fixed inset-0 pointer-events-none z-0 opacity-15">
         {floatingElements.map((el) => (
           <div
             key={el.id}
-            className="absolute"
+            className="absolute rounded-full bg-gradient-to-br from-primary/25 to-secondary/25 blur-xl"
             style={{
               left: `${el.x}%`,
               top: `${el.y}%`,
               width: `${el.size}px`,
               height: `${el.size}px`,
-              animation: `gentleFloat 20s ease-in-out infinite`,
+              animation: `ultraSmoothFloat ${el.duration}s ease-in-out infinite`,
               animationDelay: `${el.delay}s`,
-              transform: `translate(${
-                (mousePosition.x - window.innerWidth / 2) * 0.01
-              }px, ${(mousePosition.y - window.innerHeight / 2) * 0.01}px)`,
-              transition: "transform 0.3s ease-out",
+              transform: `translate3d(${
+                (mousePosition.x - window.innerWidth / 2) * 0.008
+              }px, ${(mousePosition.y - window.innerHeight / 2) * 0.008}px, 0)`,
+              transition: "transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+              willChange: "transform",
             }}
-          >
-            <div className="w-full h-full bg-gradient-to-br from-primary/30 to-secondary/30 rounded-full blur-sm" />
-          </div>
+          />
         ))}
       </div>
 
-      {/* Mouse follower */}
-      <div
-        className="fixed w-4 h-4 bg-primary/50 rounded-full pointer-events-none z-30 transition-all duration-300"
-        style={{
-          left: mousePosition.x - 8,
-          top: mousePosition.y - 8,
-          transform: hoveredTech ? "scale(2)" : "scale(1)",
-        }}
-      />
+      {/* Responsive interactive cursor */}
+      {isMouseMoving && (
+        <div
+          className="fixed w-5 h-5 bg-primary rounded-full pointer-events-none z-30 blur-sm"
+          style={{
+            left: mousePosition.x - 10,
+            top: mousePosition.y - 10,
+            transform: hoveredTech ? "scale(1.8)" : "scale(1)",
+            transition: "all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+          }}
+        />
+      )}
 
       {/* Content */}
       <div className="relative z-10 container mx-auto space-y-24">
@@ -324,7 +362,7 @@ const About = () => {
             ))}
           </div>
 
-          {/* Active Category Content */}
+          {/* Active Category Content with reduced animation delay */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
             {techCategories[activeCategory].technologies.map((tech, i) => (
               <div
@@ -333,8 +371,8 @@ const About = () => {
                 onMouseEnter={() => setHoveredTech(`${activeCategory}-${i}`)}
                 onMouseLeave={() => setHoveredTech(null)}
                 style={{
-                  animationDelay: `${i * 0.1}s`,
-                  animation: "slideInUp 0.6s ease-out forwards",
+                  animationDelay: `${i * 0.05}s`, // Reduced from 0.1s to 0.05s
+                  animation: "slideInUp 0.4s ease-out forwards", // Reduced from 0.6s to 0.4s
                 }}
               >
                 <div className="text-5xl mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
@@ -347,10 +385,10 @@ const About = () => {
                   {tech.description}
                 </p>
 
-                {/* Skill Level Progress Bar */}
+                {/* Skill Level Progress Bar with faster animation */}
                 <div className="w-full bg-base-300 rounded-full h-2 mb-2">
                   <div
-                    className={`bg-gradient-to-r ${techCategories[activeCategory].color} h-2 rounded-full transition-all duration-1000 ease-out`}
+                    className={`bg-gradient-to-r ${techCategories[activeCategory].color} h-2 rounded-full transition-all duration-600 ease-out`}
                     style={{
                       width:
                         hoveredTech === `${activeCategory}-${i}`
@@ -399,25 +437,28 @@ const About = () => {
         </section>
       </div>
 
-      {/* Enhanced CSS Animations */}
+      {/* Ultra-smooth CSS animations */}
       <style jsx>{`
-        @keyframes gentleFloat {
+        @keyframes ultraSmoothFloat {
           0%,
           100% {
-            transform: translateY(0px) rotate(0deg) scale(1);
+            transform: translateY(0px) scale(1) rotate(0deg);
           }
-          33% {
-            transform: translateY(-15px) rotate(5deg) scale(1.1);
+          25% {
+            transform: translateY(-8px) scale(1.02) rotate(1deg);
           }
-          66% {
-            transform: translateY(-5px) rotate(-3deg) scale(0.9);
+          50% {
+            transform: translateY(-15px) scale(1.05) rotate(0deg);
+          }
+          75% {
+            transform: translateY(-6px) scale(1.02) rotate(-1deg);
           }
         }
 
         @keyframes slideInUp {
           from {
             opacity: 0;
-            transform: translateY(30px) scale(0.9);
+            transform: translateY(20px) scale(0.95);
           }
           to {
             opacity: 1;
