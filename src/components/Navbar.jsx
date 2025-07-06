@@ -1,9 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
+import { appContext } from "../context/ThemeContext";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const {theme, settheme} = useContext(appContext);
+
+  const toggleTheme = (e) => {
+    if(e.target.checked){
+      settheme("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      settheme("light");
+      localStorage.setItem("theme", "light");
+    }
+  };
 
   return (
     <header className="w-full px-4 py-4 max-w-7xl mx-auto">
@@ -18,7 +30,7 @@ const Navbar = () => {
           {/* Top row - logo and toggle */}
           <div className="w-full flex items-center justify-between h-12">
             <Link to="/" className="flex items-center gap-2">
-              <h1 className="text-2xl font-bold leading-none">KESHAV</h1>
+              <h1 className="text-2xl font-bold leading-none text-black dark:text-white">KESHAV</h1>
             </Link>
 
             {/* Desktop navigation */}
@@ -27,7 +39,7 @@ const Navbar = () => {
                 <Link
                   key={text}
                   to={`/${text.toLowerCase()}`}
-                  className="relative overflow-hidden h-6 group flex items-center"
+                  className="relative overflow-hidden h-6 group flex items-center text-black dark:text-white"
                 >
                   <span className="block group-hover:-translate-y-full transition-transform duration-300">
                     {text}
@@ -41,15 +53,16 @@ const Navbar = () => {
 
             {/* Desktop theme toggle */}
             <div className="hidden md:flex items-center gap-4 ml-6">
-              <label className="swap swap-rotate transition-transform duration-500 ease-out w-8 h-8 flex items-center justify-center cursor-pointer">
+              <label className="swap swap-rotate transition-transform duration-500 ease-out relative w-8 h-8 flex items-center justify-center cursor-pointer">
                 <input
+                  onChange={toggleTheme}
                   type="checkbox"
                   className="theme-controller hidden"
-                  value="synthwave"
+                  checked={theme === "dark"}
                 />
                 {/* sun icon */}
                 <svg
-                  className="swap-off h-6 w-6 fill-current transition-all duration-500 ease-out absolute"
+                  className="swap-off h-6 w-6 fill-current transition-all duration-500 ease-out absolute text-black dark:text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -57,7 +70,7 @@ const Navbar = () => {
                 </svg>
                 {/* moon icon */}
                 <svg
-                  className="swap-on h-6 w-6 fill-current transition-all duration-500 ease-out absolute"
+                  className="swap-on h-6 w-6 fill-current transition-all duration-500 ease-out absolute text-black dark:text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -68,7 +81,7 @@ const Navbar = () => {
               <a
                 href="/resume.pdf"
                 download
-                className="border border-slate-600 hover:bg-slate-800 px-4 py-2 rounded-full font-medium transition-all duration-300 flex items-center"
+                className="border border-slate-600 hover:bg-slate-800 px-4 py-2 rounded-full font-medium transition-all duration-300 flex items-center text-black dark:text-white"
               >
                 Download Resume
               </a>
@@ -77,15 +90,16 @@ const Navbar = () => {
             {/* Mobile theme toggle and menu toggle */}
             <div className="flex items-center gap-3 md:hidden">
               {/* Theme toggle - visible on mobile */}
-              <label className="swap swap-rotate transition-transform duration-500 ease-out w-8 h-8 flex items-center justify-center cursor-pointer">
+              <label className="swap swap-rotate transition-transform duration-500 ease-out relative w-8 h-8 flex items-center justify-center cursor-pointer">
                 <input
+                  onChange={toggleTheme}
                   type="checkbox"
                   className="theme-controller hidden"
-                  value="synthwave"
+                  checked={theme === "dark"}
                 />
                 {/* sun icon */}
                 <svg
-                  className="swap-off h-6 w-6 fill-current transition-all duration-500 ease-out absolute"
+                  className="swap-off h-6 w-6 fill-current transition-all duration-500 ease-out absolute text-black dark:text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -93,7 +107,7 @@ const Navbar = () => {
                 </svg>
                 {/* moon icon */}
                 <svg
-                  className="swap-on h-6 w-6 fill-current transition-all duration-500 ease-out absolute"
+                  className="swap-on h-6 w-6 fill-current transition-all duration-500 ease-out absolute text-black dark:text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -139,7 +153,7 @@ const Navbar = () => {
                   key={text}
                   to={`/${text.toLowerCase()}`}
                   className={clsx(
-                    "hover:text-indigo-500 transition-all duration-300 ease-out",
+                    "hover:text-indigo-500 transition-all duration-300 ease-out text-black dark:text-white",
                     mobileMenuOpen
                       ? "opacity-100 translate-x-0"
                       : "opacity-0 -translate-x-4"
@@ -157,7 +171,7 @@ const Navbar = () => {
                 href="/resume.pdf"
                 download
                 className={clsx(
-                  "border border-slate-600 hover:bg-slate-800 px-4 py-2 rounded-full text-sm font-medium transition-all duration-500 ease-out",
+                  "border border-slate-600 hover:bg-slate-800 px-4 py-2 rounded-full text-sm font-medium transition-all duration-500 ease-out text-black dark:text-white",
                   mobileMenuOpen
                     ? "opacity-100 translate-x-0"
                     : "opacity-0 -translate-x-4"
