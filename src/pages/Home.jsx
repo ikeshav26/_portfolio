@@ -120,7 +120,7 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="mb-24">
+        <section className="mb-16 md:mb-24">
           <h2 className="text-4xl font-bold text-center text-base-content mb-12">
             GitHub Activity
           </h2>
@@ -163,18 +163,18 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="mb-24">
+        <section className="mb-16 md:mb-24">
           <div className="relative">
             <DragCards />
           </div>
         </section>
 
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4 py-16">
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto px-4 py-8 md:py-16">
           {/* Projects Completed */}
-          <div className="flex flex-col items-center text-center p-8 bg-gradient-to-br from-base-200 to-base-100 dark:from-base-300 dark:to-base-200 rounded-3xl shadow-xl border border-base-300 dark:border-base-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+          <div className="flex flex-col items-center text-center p-6 md:p-8 bg-gradient-to-br from-base-200 to-base-100 dark:from-base-300 dark:to-base-200 rounded-3xl shadow-xl border border-base-300 dark:border-base-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
             <div className="text-primary mb-4">
               <svg
-                className="w-12 h-12"
+                className="w-10 h-10 md:w-12 md:h-12"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
@@ -184,17 +184,17 @@ const Home = () => {
                 <path d="M12 12V4l9 5-9 5-9-5 9-5z" />
               </svg>
             </div>
-            <h3 className="text-4xl font-extrabold text-primary mb-2">5+</h3>
-            <p className="text-base-content/70 font-medium">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-primary mb-2">5+</h3>
+            <p className="text-base-content/70 font-medium text-sm md:text-base">
               Projects Completed
             </p>
           </div>
 
           {/* Years of Learning */}
-          <div className="flex flex-col items-center text-center p-8 bg-gradient-to-br from-base-200 to-base-100 dark:from-base-300 dark:to-base-200 rounded-3xl shadow-xl border border-base-300 dark:border-base-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+          <div className="flex flex-col items-center text-center p-6 md:p-8 bg-gradient-to-br from-base-200 to-base-100 dark:from-base-300 dark:to-base-200 rounded-3xl shadow-xl border border-base-300 dark:border-base-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
             <div className="text-secondary mb-4">
               <svg
-                className="w-12 h-12"
+                className="w-10 h-10 md:w-12 md:h-12"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
@@ -203,17 +203,17 @@ const Home = () => {
                 <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
               </svg>
             </div>
-            <h3 className="text-4xl font-extrabold text-secondary mb-2">1+</h3>
-            <p className="text-base-content/70 font-medium">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-secondary mb-2">1+</h3>
+            <p className="text-base-content/70 font-medium text-sm md:text-base">
               Years of Learning
             </p>
           </div>
 
           {/* Skills Mastered */}
-          <div className="flex flex-col items-center text-center p-8 bg-gradient-to-br from-base-200 to-base-100 dark:from-base-300 dark:to-base-200 rounded-3xl shadow-xl border border-base-300 dark:border-base-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+          <div className="flex flex-col items-center text-center p-6 md:p-8 bg-gradient-to-br from-base-200 to-base-100 dark:from-base-300 dark:to-base-200 rounded-3xl shadow-xl border border-base-300 dark:border-base-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
             <div className="text-accent mb-4">
               <svg
-                className="w-12 h-12"
+                className="w-10 h-10 md:w-12 md:h-12"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
@@ -222,8 +222,8 @@ const Home = () => {
                 <path d="M14 10V3.5a.5.5 0 0 0-.85-.35l-7.3 7.3a1.5 1.5 0 0 0 0 2.1l7.3 7.3a.5.5 0 0 0 .85-.35V14h5a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-5z" />
               </svg>
             </div>
-            <h3 className="text-4xl font-extrabold text-accent mb-2">10+</h3>
-            <p className="text-base-content/70 font-medium">Skills Mastered</p>
+            <h3 className="text-3xl md:text-4xl font-extrabold text-accent mb-2">10+</h3>
+            <p className="text-base-content/70 font-medium text-sm md:text-base">Skills Mastered</p>
           </div>
         </section>
       </div>
