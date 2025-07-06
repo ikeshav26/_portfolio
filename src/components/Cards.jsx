@@ -91,7 +91,6 @@ const Card = ({ containerRef, src, alt, top, left, rotate, className, floatDelay
       drag
       dragMomentum={false}
       dragElastic={0.1}
-      dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
       onDragStart={() => {
         setIsDragging(true);
         updateZIndex();
@@ -104,41 +103,30 @@ const Card = ({ containerRef, src, alt, top, left, rotate, className, floatDelay
         isDragging 
           ? {} 
           : {
-              y: [0, -20, 0],
-              x: [0, 10, -10, 0],
-              rotate: [
-                rotate,
-                `${parseFloat(rotate) + 5}deg`,
-                `${parseFloat(rotate) - 3}deg`,
-                rotate,
-              ],
+              y: [0, -15, 0],
+              rotate: [rotate, `${parseFloat(rotate) + 3}deg`, rotate],
               transition: {
-                duration: 6 + Math.random() * 4,
+                duration: 8, // Slower animation
                 repeat: Infinity,
                 ease: "easeInOut",
                 delay: floatDelay,
               }
             }
       }
-      initial={{ opacity: 0, scale: 0.8 }}
+      initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{
         opacity: 1,
         scale: 1,
-        transition: { duration: 0.8, delay: floatDelay * 0.3 },
+        transition: { duration: 0.6, delay: floatDelay * 0.2 },
       }}
-      whileHover={
-        !isDragging
-          ? {
-              scale: 1.05,
-              transition: { duration: 0.2 },
-            }
-          : {}
-      }
+      whileHover={!isDragging ? { 
+        scale: 1.03,
+        transition: { duration: 0.3 }
+      } : {}}
       whileDrag={{
-        scale: 1.1,
+        scale: 1.05,
         zIndex: 999,
-        rotate: `${parseFloat(rotate) + 5}deg`,
-        transition: { duration: 0.1 },
+        transition: { duration: 0.1 }
       }}
     >
       <img
@@ -146,6 +134,8 @@ const Card = ({ containerRef, src, alt, top, left, rotate, className, floatDelay
         alt={alt}
         className="w-full h-auto rounded-xl shadow-lg bg-base-200 p-1 pb-4 border border-base-300 pointer-events-none"
         draggable={false}
+        loading="lazy"
+        decoding="async"
       />
     </motion.div>
   );
