@@ -169,7 +169,7 @@ const Navbar = () => {
                 ))}
 
                 <a
-                  href="/resume.pdf"
+                  href="/Resume.pdf"
                   download
                   className={clsx(
                     "border border-white/30 dark:border-white/20 hover:bg-white/20 dark:hover:bg-white/10 px-4 py-2 rounded-full text-sm font-medium transition-all duration-500 ease-out text-base-content/80 hover:text-base-content backdrop-blur-sm drop-shadow-sm",
