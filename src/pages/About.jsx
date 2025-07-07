@@ -406,8 +406,8 @@ const About = () => {
           </div>
         </section>
 
-        {/* Animated Reviews Section - Responsive */}
-        <section className="relative overflow-hidden py-20">
+        {/* Animated Reviews Section - Responsive with Enhanced Fade */}
+        <section className="relative overflow-hidden py-14">
           <h2 className="text-4xl font-bold text-center text-base-content mb-16">
             What People Say
           </h2>
@@ -415,7 +415,7 @@ const About = () => {
           {/* Desktop and Tablet View (2 columns) */}
           <div className="hidden md:flex gap-8 h-96 relative">
             {/* Left Column - Reviews going up */}
-            <div className="flex-1 relative overflow-hidden">
+            <div className="flex-1 relative overflow-hidden rounded-2xl">
               <div className="animate-scroll-up space-y-6">
                 {/* First set of reviews */}
                 <ReviewCard
@@ -491,10 +491,14 @@ const About = () => {
                   review="Impressed by Keshav's Node.js and MongoDB skills. His API development is clean and efficient."
                 />
               </div>
+              
+              {/* Column-specific fade overlays */}
+              <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-base-100 via-base-100/90 to-transparent pointer-events-none z-20"></div>
+              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-base-100 via-base-100/90 to-transparent pointer-events-none z-20"></div>
             </div>
 
             {/* Right Column - Reviews going down */}
-            <div className="flex-1 relative overflow-hidden">
+            <div className="flex-1 relative overflow-hidden rounded-2xl">
               <div className="animate-scroll-down space-y-6">
                 {/* First set of reviews */}
                 <ReviewCard
@@ -570,12 +574,16 @@ const About = () => {
                   review="Solid understanding of deployment processes. Keshav's applications are well-structured and scalable."
                 />
               </div>
+              
+              {/* Column-specific fade overlays */}
+              <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-base-100 via-base-100/90 to-transparent pointer-events-none z-20"></div>
+              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-base-100 via-base-100/90 to-transparent pointer-events-none z-20"></div>
             </div>
           </div>
 
           {/* Mobile View (Single Column) */}
           <div className="block md:hidden">
-            <div className="relative overflow-hidden h-80">
+            <div className="relative overflow-hidden h-80 rounded-2xl">
               <div className="animate-scroll-up-mobile space-y-4">
                 {/* All reviews in single column for mobile */}
                 <ReviewCard
@@ -693,12 +701,20 @@ const About = () => {
                   review="Creative problem solver with excellent debugging skills. Keshav helped us overcome complex challenges."
                 />
               </div>
+              
+              {/* Mobile fade overlays */}
+              <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-base-100 via-base-100/90 to-transparent pointer-events-none z-20"></div>
+              <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-base-100 via-base-100/90 to-transparent pointer-events-none z-20"></div>
             </div>
           </div>
 
-          {/* Gradient overlays for fade effect */}
-          <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-base-100 to-transparent pointer-events-none z-10"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-base-100 to-transparent pointer-events-none z-10"></div>
+          {/* Enhanced Section-wide fade overlays */}
+          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-base-100 via-base-100/70 via-base-100/40 to-transparent pointer-events-none z-30"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-base-100 via-base-100/70 via-base-100/40 to-transparent pointer-events-none z-30"></div>
+          
+          {/* Side fade effects */}
+          <div className="absolute top-0 left-0 bottom-0 w-8 bg-gradient-to-r from-base-100 to-transparent pointer-events-none z-30"></div>
+          <div className="absolute top-0 right-0 bottom-0 w-8 bg-gradient-to-l from-base-100 to-transparent pointer-events-none z-30"></div>
         </section>
 
         {/* Interactive CTA */}
