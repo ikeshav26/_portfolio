@@ -117,7 +117,7 @@ const Projects = () => {
       live: "https://fit-ai.mannu.live",
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop",
       status: "Completed",
-      teamSize: "4 Members"
+      teamSize: "6 Members"
     },
     {
       id: 2,
