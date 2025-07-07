@@ -152,7 +152,7 @@ const Navbar = () => {
                 {["Home", "About", "Projects", "Contact"].map((text, index) => (
                   <Link
                     key={text}
-                    to={`/${text.toLowerCase()}`}
+                    to={text=="Home"?`/`:`/${text.toLowerCase()}`}
                     className={clsx(
                       "hover:text-primary transition-all duration-300 ease-out text-base-content/80 px-3 py-2 rounded-lg hover:bg-white/20 dark:hover:bg-white/10 drop-shadow-sm backdrop-blur-sm",
                       mobileMenuOpen
