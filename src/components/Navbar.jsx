@@ -23,7 +23,7 @@ const Navbar = () => {
         {/* Dropdown height animated container */}
         <div
           className={clsx(
-            "transition-all duration-500 ease-in-out rounded-3xl overflow-hidden backdrop-blur-xl bg-white/10 dark:bg-black/20 border border-white/20 dark:border-white/20 shadow-xl",
+            "transition-all duration-500 ease-in-out rounded-3xl overflow-hidden backdrop-blur-2xl bg-base-200/20 border border-white/20 dark:border-white/20 shadow-xl",
             mobileMenuOpen ? "max-h-[500px]" : "max-h-[80px]"
           )}
         >
