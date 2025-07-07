@@ -413,7 +413,7 @@ const About = () => {
           </h2>
 
           {/* Desktop and Tablet View (2 columns) */}
-          <div className="hidden md:flex gap-8 h-96 relative">
+          <div className="hidden md:flex gap-8 h-150 relative">
             {/* Left Column - Reviews going up */}
             <div className="flex-1 relative overflow-hidden rounded-2xl">
               <div className="animate-scroll-up space-y-6">
@@ -493,8 +493,8 @@ const About = () => {
               </div>
               
               {/* Column-specific fade overlays */}
-              <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-base-100 via-base-100/90 to-transparent pointer-events-none z-20"></div>
-              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-base-100 via-base-100/90 to-transparent pointer-events-none z-20"></div>
+              <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-base-100/90 via-base-100/80 to-transparent pointer-events-none z-20"></div>
+              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-base-100/90 via-base-100/80 to-transparent pointer-events-none z-20"></div>
             </div>
 
             {/* Right Column - Reviews going down */}
@@ -583,7 +583,7 @@ const About = () => {
 
           {/* Mobile View (Single Column) */}
           <div className="block md:hidden">
-            <div className="relative overflow-hidden h-80 rounded-2xl">
+            <div className="relative overflow-hidden h-140 rounded-2xl">
               <div className="animate-scroll-up-mobile space-y-4">
                 {/* All reviews in single column for mobile */}
                 <ReviewCard
@@ -703,8 +703,8 @@ const About = () => {
               </div>
               
               {/* Mobile fade overlays */}
-              <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-base-100 via-base-100/90 to-transparent pointer-events-none z-20"></div>
-              <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-base-100 via-base-100/90 to-transparent pointer-events-none z-20"></div>
+              <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-base-100/90 via-base-100/80 to-transparent pointer-events-none z-20"></div>
+              <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-base-100/90 via-base-100/80 to-transparent pointer-events-none z-20"></div>
             </div>
           </div>
 
