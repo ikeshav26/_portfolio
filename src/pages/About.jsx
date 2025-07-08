@@ -709,8 +709,8 @@ const About = () => {
           </div>
 
           {/* Enhanced Section-wide fade overlays */}
-          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-base-100 via-base-100/70 via-base-100/40 to-transparent pointer-events-none z-30"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-base-100 via-base-100/70 via-base-100/40 to-transparent pointer-events-none z-30"></div>
+          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-base-100  via-base-100/40 to-transparent pointer-events-none z-30"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-base-100  via-base-100/40 to-transparent pointer-events-none z-30"></div>
           
           {/* Side fade effects */}
           <div className="absolute top-0 left-0 bottom-0 w-8 bg-gradient-to-r from-base-100 to-transparent pointer-events-none z-30"></div>
