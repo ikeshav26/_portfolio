@@ -4,13 +4,15 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router'
 import { ThemeContext } from './context/ThemeContext.jsx'
+import { Analytics } from "@vercel/analytics/react"
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-  <ThemeContext>
-   <App />
-  </ThemeContext>
-  </BrowserRouter>
-    
- 
+  <>
+    <Analytics />
+    <BrowserRouter>
+      <ThemeContext>
+        <App />
+      </ThemeContext>
+    </BrowserRouter>
+  </>
 )
