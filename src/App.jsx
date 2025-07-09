@@ -6,6 +6,7 @@ import About from './pages/About'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 import Navbar from './components/Navbar'
+import Blogs from './pages/Blogs'
 
 const App = () => {
   const location = useLocation()
@@ -32,6 +33,7 @@ const App = () => {
             <Route path='/about' element={<About/>}/>
             <Route path='/projects' element={<Projects/>}/>
             <Route path='/contact' element={<Contact/>}/>
+            <Route path='/blog' element={<Blogs/>}/>
           </Routes>
         </motion.div>
       </AnimatePresence>

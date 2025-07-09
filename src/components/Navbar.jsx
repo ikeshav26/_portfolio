@@ -36,7 +36,7 @@ const Navbar = () => {
 
               {/* Desktop navigation */}
               <div className="hidden md:flex items-center gap-6 ml-6">
-                {["Home", "About", "Projects", "Contact"].map((text) => (
+                {["Home", "About", "Projects","Blog", "Contact"].map((text) => (
                   <Link
                     key={text}
                     to={text=="Home"?`/`:`/${text.toLowerCase()}`}
@@ -149,7 +149,7 @@ const Navbar = () => {
               )}
             >
               <div className="flex flex-col items-start gap-4 pb-2 px-2 py-4 bg-white/5 dark:bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 dark:border-white/10">
-                {["Home", "About", "Projects", "Contact"].map((text, index) => (
+                {["Home", "About", "Projects","Blog", "Contact"].map((text, index) => (
                   <Link
                     key={text}
                     to={text=="Home"?`/`:`/${text.toLowerCase()}`}
