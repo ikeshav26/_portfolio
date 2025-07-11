@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useMemo, useRef, useContext } from 'react';
 import { 
   FaGithub, 
   FaExternalLinkAlt, 
@@ -26,6 +26,7 @@ import {
   SiOpenai 
 } from 'react-icons/si';
 import { Link, useNavigate } from 'react-router-dom';
+import { appContext } from '../context/ThemeContext';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -36,6 +37,8 @@ const Projects = () => {
   const mouseTimer = useRef(null);
   const rafId = useRef(null);
   const navigate = useNavigate();
+  const {theme}=useContext(appContext)
+
 
   
   // Mouse tracking for smooth blob movement
@@ -103,7 +106,7 @@ const Projects = () => {
       techStack: [
         { name: "Python", icon: <FaPython color="#3776AB" /> },
         { name: "Jupyter", icon: <SiJupyter color="#F37626" /> },
-        { name: "Flask", icon: <FaFlask color="#000000" /> },
+        { name: "Flask", icon: <FaFlask  color={theme=="dark"?"#ffffff":"#111111"} /> },
         { name: "Streamlit", icon: <SiStreamlit color="#FF4B4B" /> }
       ],
       features: [
@@ -129,7 +132,7 @@ const Projects = () => {
       techStack: [
         { name: "React", icon: <FaReact color="#61DAFB" /> },
         { name: "Node.js", icon: <FaNodeJs color="#3C873A" /> },
-        { name: "Express", icon: <SiExpress color="#000000" /> },
+        { name: "Express", icon: <SiExpress  color={theme=="dark"?"#ffffff":"#111111"} /> },
         { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
         { name: "TailwindCSS", icon: <SiTailwindcss color="#38BDF8" /> }
       ],
@@ -156,7 +159,7 @@ const Projects = () => {
       techStack: [
         { name: "React", icon: <FaReact color="#61DAFB" /> },
         { name: "Node.js", icon: <FaNodeJs color="#3C873A" /> },
-        { name: "Express", icon: <SiExpress color="#000000" /> },
+        { name: "Express", icon: <SiExpress  color={theme=="dark"?"#ffffff":"#111111"} /> },
         { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
         { name: "TailwindCSS", icon: <SiTailwindcss color="#38BDF8" /> }
       ],
@@ -183,7 +186,7 @@ const Projects = () => {
       techStack: [
         { name: "React", icon: <FaReact color="#61DAFB" /> },
         { name: "Node.js", icon: <FaNodeJs color="#3C873A" /> },
-        { name: "Express", icon: <SiExpress color="#000000" /> },
+        { name: "Express", icon: <SiExpress  color={theme=="dark"?"#ffffff":"#111111"} />  },
         { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
         { name: "OpenAI", icon: <SiOpenai color="#412991" /> },
         { name: "JavaScript", icon: <FaJs color="#F7DF1E" /> }
