@@ -100,11 +100,11 @@ const Home = () => {
       />
 
       {/* Main Content */}
-      <div className="relative z-20 container mx-auto px-4 py-20">
+      <div className="relative z-20 container mx-auto px-4 py-20 ">
         <section className="text-center mb-24">
           <h1 className="text-5xl md:text-7xl font-bold text-base-content mb-6">
             Hi, I'm{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r  from-primary to-secondary bg-clip-text text-transparent">
               KESHAV
             </span>
           </h1>

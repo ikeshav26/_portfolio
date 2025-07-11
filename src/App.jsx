@@ -12,7 +12,7 @@ const App = () => {
   const location = useLocation()
 
   return (
-    <div className='overflow-hidden'>
+    <div className='overflow-hidden poppins-medium'>
       <Navbar/>
       <AnimatePresence mode="wait">
         <motion.div

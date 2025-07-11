@@ -1,6 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montagu+Slab:opsz,wght@16..144,100..700&family=Orbitron:wght@400..900&family=Outfit:wght@100..900&family=Poppins:wght@500&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Dirt&display=swap');
 @import "tailwindcss";
 @plugin "daisyui";
-
 
 [data-theme="dark"] {
   color-scheme: "dark";
@@ -50,3 +50,18 @@
   --color-error: oklch(62.013% 0.208 28.717);
   --color-error-content: oklch(12.402% 0.041 28.717);
 }
+
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+.rubik-dirt-regular {
+  font-family: "Rubik Dirt", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
