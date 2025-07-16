@@ -151,9 +151,9 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "URL Shortener",
-      description: "A powerful URL shortening service built with MERN stack that allows users to create both custom and random short URLs with analytics and management features.",
-      longDescription: "This URL shortener provides a comprehensive solution for link management with both custom and randomly generated short URLs. Features include click analytics, QR code generation, link expiration, and a user-friendly dashboard for managing all shortened links.",
+      title: "InteriorAI-Interior Designer",
+      description: "InteriorAI lets users create interior designs from text prompts and explore images shared by others. Enter your design idea and get realistic AI-generated visuals for inspiration or planning.",
+      longDescription: "InteriorAI is an AI-powered web app that lets users generate interior design images from text prompts describing their ideal style, colors, or room type. Users simply enter their design ideas and receive realistic, AI-generated visuals matching their vision. They can also browse an Explore page to discover designs shared by others for inspiration. It’s a creative tool for homeowners, designers, and anyone imagining new spaces.",
       category: "fullstack",
       type: "Personal Project",
       techStack: [
@@ -164,15 +164,15 @@ const Projects = () => {
         { name: "TailwindCSS", icon: <SiTailwindcss color="#38BDF8" /> }
       ],
       features: [
-        "Custom & Random Short URLs",
-        "Click Analytics & Tracking",
-        "QR Code Generation",
-        "Link Management Dashboard",
-        "Bulk URL Processing"
+        "Text-to-Image Interior Design",
+        "Explore Shared Designs",
+        "User-Friendly Interface",
+        "Responsive Design",
+        "Realistic AI-Generated Visuals"
       ],
-      github: "https://github.com/ikeshav26/url-shortener-frontend",
-      live: "https://urlshortener.ikeshav.tech",
-      image: "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=600&h=400&fit=crop",
+      github: "https://github.com/ikeshav26/ai-interior-design-generator",
+      live: "https://designer.ikeshav.tech",
+      image: "/InteriorAi.png",
       status: "Completed",
       teamSize: "Solo"
     },
