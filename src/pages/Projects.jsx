@@ -144,7 +144,7 @@ const Projects = () => {
         "Responsive Design"
       ],
       github: "https://github.com/ikeshav26/blog-app",
-      live: "https://blog-app-nu-pink.vercel.app/",
+      live: "https://bitblog.ikeshav.tech",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
       status: "Completed",
       teamSize: "Solo"
