@@ -34,7 +34,81 @@ const Blogs = () => {
 
   const blogPosts = [
     {
-      id: 1,
+  id: 1,
+  title: "ElevateCV-AI: AI-Powered Resume, Letter & Interview Generator",
+  excerpt:
+    "An all-in-one platform for building AI-generated resumes, cover letters, and preparing for interviews using Canvas and Google Gemini API.",
+  fullDescription:
+    "ElevateCV-AI is an educational full-stack web app that empowers users to generate professional resumes and cover letters, and even prepare for interviews using AI. Built with the MERN stack and styled with Tailwind CSS, it integrates Gemini AI for content generation and canvas APIs for live resume rendering. It features OTP-based auth, resume/letter visibility toggling, a public explore page, and interview prep with dynamic AI question generation. The app uses LLMs and premium APIs for better accuracy and suggestions. The frontend is React-based, and the backend is secured with Express and MongoDB. Designed for performance, it was deployed using Vercel and Render.",
+  date: "2025-07-18",
+  readTime: "10 min read",
+  image: "📄",
+  tags: [
+    "AI",
+    "Resume Builder",
+    "Interview Prep",
+    "MERN Stack",
+    "Educational Project",
+  ],
+  techStack: [
+    "React",
+    "Node.js",
+    "MongoDB",
+    "Express",
+    "Tailwind CSS",
+    "Google Gemini",
+    "Canvas API",
+  ],
+  challenges: [
+    "Canvas rendering",
+    "AI output accuracy",
+    "Token-based OTP login",
+    "Maintaining theme consistency",
+  ],
+  achievements: [
+    "AI-generated resumes & letters",
+    "OTP-secured auth system",
+    "Public explore & toggle features",
+    "AI-powered interview questions",
+  ],
+},{
+  id: 2,
+  title: "Interior-AI: AI Interior Design Visualizer",
+  excerpt:
+    "Transform your room's look using AI—an app that generates stunning room designs from just prompt using the Replicate API.",
+  fullDescription:
+    "Interior-AI is a creative and intuitive web app that uses AI to imagine interior spaces. Built with React and Node.js, it allows users to give prompt and choose a design theme. The app sends the data to the Replicate API which returns AI-generated redesigned versions of the room. Users can view, download, or regenerate new designs instantly. I focused on the frontend UX with smooth transitions, modals, image previews, and file validation. The backend handles image uploads securely and forwards requests to the AI API. This app showcases how AI can be applied in home decor and visual design.",
+  date: "2025-05-02",
+  readTime: "7 min read",
+  image: "🛋️",
+  tags: [
+    "AI",
+    "Interior Design",
+    "React App",
+    "Computer Vision",
+    "Creative Tools",
+  ],
+  techStack: [
+    "React",
+    "Node.js",
+    "Tailwind CSS",
+    "Replicate API",
+    "Cloudinary",
+  ],
+  challenges: [
+    "Image upload & preview",
+    "API rate limits",
+    "Design realism vs speed",
+    "Responsive layout for image results",
+  ],
+  achievements: [
+    "AI-based room transformation",
+    "Secure image handling",
+    "Real-time previews",
+    "User-friendly design selector",
+  ],
+},{
+      id: 3,
       title: "BitBlog: A Full-Stack Blog Platform with Auth & Admin Panel",
       excerpt:
         "A powerful MERN-based blog system with rich text editing, user roles, JWT auth, and custom admin dashboard.",
@@ -57,7 +131,7 @@ const Blogs = () => {
       ],
     },
     {
-      id: 2,
+      id: 4,
       title: "FitAI: Building an AI-Powered Fitness Web App",
       excerpt:
         "How our team created an intelligent fitness assistant using React, Flask, and machine learning to provide health insights.",
@@ -93,7 +167,7 @@ const Blogs = () => {
         "Flask REST API",
         "Streamlit demo",
       ],
-    },
+    }
   ];
 
   return (
