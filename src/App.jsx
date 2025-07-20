@@ -7,12 +7,14 @@ import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 import Navbar from './components/Navbar'
 import Blogs from './pages/Blogs'
+import LoadingProgressBar from './components/LoadingProgress'
 
 const App = () => {
   const location = useLocation()
 
   return (
     <div className='overflow-hidden poppins-medium'>
+      <LoadingProgressBar/>
       <Navbar/>
       <AnimatePresence mode="wait">
         <motion.div
