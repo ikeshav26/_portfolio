@@ -117,7 +117,7 @@ const Home = () => {
                 
                 <div className="overflow-hidden">
                   <p className="text-xl md:text-2xl text-base-content/80 font-medium animate-slide-up-delay-1">
-                    Full-Stack Developer | MERN Stack & Gen-AI Enthusiast
+                    Software Engineer | MERN Stack & Gen-AI Enthusiast
                   </p>
                 </div>
               </div>
@@ -125,8 +125,8 @@ const Home = () => {
               <div className="overflow-hidden">
                 <p className="text-base-content/70 text-lg leading-relaxed animate-slide-up-delay-2">
                   Passionate about building innovative MERN stack applications with cutting-edge 
-                  Gen-AI integration. I specialize in creating intelligent web solutions that solve 
-                  real-world problems through code and artificial intelligence.
+                  Gen-AI integration. Currently strengthening my foundation in Java and Data Structures & Algorithms 
+                  while specializing in creating intelligent web solutions that solve real-world problems.
                 </p>
               </div>
               
@@ -162,13 +162,25 @@ const Home = () => {
                   </div>
                 </div>
                 
-                <div className="absolute top-36 left-8 animate-float-slow-delay-2">
+                <div className="absolute top-40 left-10 animate-float-slow-delay-2">
                   <div className="bg-base-200 dark:bg-base-300 border border-base-300 dark:border-base-600 text-base-content px-5 py-3 rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
                     MongoDB
                   </div>
                 </div>
+
+                <div className="absolute top-18 left-11 animate-float-slow-delay-2">
+                  <div className="bg-base-200 dark:bg-base-300 border border-base-300 dark:border-base-600 text-base-content px-5 py-3 rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                    Java
+                  </div>
+                </div>
                 
-                <div className="absolute bottom-36 right-8 animate-float-slow-delay-3">
+                <div className="absolute bottom-18 right-11 animate-float-slow-delay-3">
+                  <div className="bg-base-200 dark:bg-base-300 border border-base-300 dark:border-base-600 text-base-content px-5 py-3 rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                    DSA
+                  </div>
+                </div>
+                
+                <div className="absolute bottom-40 right-10 animate-float-slow-delay-3">
                   <div className="bg-base-200 dark:bg-base-300 border border-base-300 dark:border-base-600 text-base-content px-5 py-3 rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
                     JavaScript
                   </div>
@@ -402,6 +414,14 @@ const Home = () => {
         
         .animate-float-slow-delay-5 {
           animation: float-slow 4s ease-in-out infinite 2.5s;
+        }
+        
+        .animate-float-slow-delay-6 {
+          animation: float-slow 4s ease-in-out infinite 3s;
+        }
+        
+        .animate-float-slow-delay-7 {
+          animation: float-slow 4s ease-in-out infinite 3.5s;
         }
         
         .animate-pulse-slow {
