@@ -223,9 +223,45 @@ const About = () => {
           level: 85,
         },
         {
+          name: "Java",
+          icon: <FaCode color="#f89820" />,
+          description: "Object-oriented programming",
+          level: 70,
+        },
+        {
           name: "Jupyter",
           icon: <SiJupyter color="#F37626" />,
           description: "Notebook IDE",
+          level: 80,
+        },
+      ],
+    },
+    {
+      title: "Data Structures & Algorithms",
+      color: "from-indigo-500 to-purple-600",
+      technologies: [
+        {
+          name: "Arrays & Strings",
+          icon: <FaCode color="#667eea" />,
+          description: "Linear data structures",
+          level: 75,
+        },
+        // {
+        //   name: "Trees & Graphs",
+        //   icon: <FaCode color="#764ba2" />,
+        //   description: "Hierarchical structures",
+        //   level: 65,
+        // },
+        {
+          name: "Dynamic Programming",
+          icon: <FaCode color="#f093fb" />,
+          description: "Optimization techniques",
+          level: 60,
+        },
+        {
+          name: "Sorting & Searching",
+          icon: <FaCode color="#4facfe" />,
+          description: "Algorithmic fundamentals",
           level: 80,
         },
       ],
@@ -247,8 +283,8 @@ const About = () => {
     },
     {
       icon: <FaHeart />,
-      value: "∞",
-      label: "Passion Level",
+      value: "17+",
+      label: "Technologies Learning",
       color: "text-red-500",
     },
   ];
@@ -314,7 +350,8 @@ const About = () => {
             Hey! I'm <strong className="text-primary">Keshav</strong>, a
             3rd-semester B.Tech student and passionate MERN stack developer. I
             love crafting web apps, exploring new tech, and bringing ideas to
-            life through code.
+            life through code. Currently expanding my skillset with <strong className="text-secondary">Java programming</strong> and 
+            <strong className="text-secondary"> Data Structures & Algorithms</strong> to strengthen my problem-solving foundation.
           </p>
 
           {/* Interactive Stats */}
