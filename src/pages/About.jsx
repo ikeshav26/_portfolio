@@ -406,6 +406,134 @@ const About = () => {
           </div>
         </section>
 
+        {/* Certificates Section */}
+        <section className="space-y-12">
+          <h2 className="text-4xl font-bold text-center text-base-content mb-8">
+            My Certificates
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Internship Certificate */}
+            <div className="group bg-gradient-to-br from-base-200 to-base-100 dark:from-base-300 dark:to-base-200 rounded-2xl p-6 border border-base-300 dark:border-base-600 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1 h-[370px] flex flex-col">
+              <div className="flex flex-col items-center text-center space-y-4 flex-grow">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform duration-300">
+                  🏢
+                </div>
+                <h3 className="text-xl font-bold text-base-content group-hover:text-primary transition-colors duration-300">
+                  Internship Certificate
+                </h3>
+                <p className="text-base-content/70 text-sm leading-relaxed flex-grow">
+                  Professional internship experience at <strong className="text-primary/102">CodeSoft</strong>, showcasing practical skills in real-world projects and collaborative development.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 w-full mt-auto">
+                  <a 
+                    href="/internship.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn btn-primary rounded-full px-6 py-2 text-sm font-semibold hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                  >
+                    📄 View Certificate
+                  </a>
+                  <a 
+                    href="/internship.pdf" 
+                    download="Keshav_Internship_Certificate.pdf"
+                    className="btn btn-outline rounded-full px-6 py-2 text-sm font-semibold hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                  >
+                    💾 Download
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* MERN Stack Certificate */}
+            <div className="group bg-gradient-to-br from-base-200 to-base-100 dark:from-base-300 dark:to-base-200 rounded-2xl p-6 border border-base-300 dark:border-base-600 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1 h-[370px] flex flex-col">
+              <div className="flex flex-col items-center text-center space-y-4 flex-grow">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform duration-300">
+                  ⚡
+                </div>
+                <h3 className="text-xl font-bold text-base-content group-hover:text-primary transition-colors duration-300">
+                  MERN Stack Development
+                </h3>
+                <p className="text-base-content/70 text-sm leading-relaxed flex-grow">
+                  <strong className="text-primary/102">Udemy</strong> certification covering full-stack web development with MongoDB, Express.js, React.js, and Node.js technologies.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 w-full mt-auto">
+                  <a 
+                    href="/mernstack.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn btn-primary rounded-full px-6 py-2 text-sm font-semibold hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                  >
+                    📄 View Certificate
+                  </a>
+                  <a 
+                    href="/mernstack.pdf" 
+                    download="Keshav_MERN_Stack_Certificate.pdf"
+                    className="btn btn-outline rounded-full px-6 py-2 text-sm font-semibold hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                  >
+                    💾 Download
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Git Certificate */}
+            <div className="group bg-gradient-to-br from-base-200 to-base-100 dark:from-base-300 dark:to-base-200 rounded-2xl p-6 border border-base-300 dark:border-base-600 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 h-[370px] flex flex-col">
+              <div className="flex flex-col items-center text-center space-y-4 flex-grow">
+                <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform duration-300">
+                  🔧
+                </div>
+                <h3 className="text-xl font-bold text-base-content group-hover:text-primary transition-colors duration-300">
+                  Git & Version Control
+                </h3>
+                <p className="text-base-content/70 text-sm leading-relaxed flex-grow">
+                  <strong className="text-primary/102">Udemy</strong> course certification with comprehensive understanding of Git workflows, branching strategies, and collaborative development practices.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 w-full mt-auto">
+                  <a 
+                    href="/git.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn btn-primary rounded-full px-6 py-2 text-sm font-semibold hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                  >
+                    📄 View Certificate
+                  </a>
+                  <a 
+                    href="/git.pdf" 
+                    download="Keshav_Git_Certificate.pdf"
+                    className="btn btn-outline rounded-full px-6 py-2 text-sm font-semibold hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                  >
+                    💾 Download
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+
+          {/* Achievement Stats */}
+          <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8 mt-12 text-center border border-primary/20">
+            <h3 className="text-2xl font-bold text-base-content mb-4">
+              Professional Achievements
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="space-y-2">
+                <div className="text-3xl font-bold text-primary">3+</div>
+                <div className="text-base-content/70">Certificates Earned</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-3xl font-bold text-secondary">100%</div>
+                <div className="text-base-content/70">Completion Rate</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-3xl font-bold text-primary">∞</div>
+                <div className="text-base-content/70">Learning Passion</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Animated Reviews Section - Responsive with Enhanced Fade */}
         <section className="relative overflow-hidden py-14">
           <h2 className="text-4xl font-bold text-center text-base-content mb-16">
@@ -419,36 +547,36 @@ const About = () => {
               <div className="animate-scroll-up space-y-6">
                 {/* First set of reviews */}
                 <ReviewCard
-                  name="Sarah Johnson"
+                  name="Krish Puri"
                   role="Frontend Developer"
                   avatar="👩‍💻"
                   rating={5}
                   review="Keshav's React skills are impressive! His clean code and attention to detail make him a pleasure to work with."
                 />
                 <ReviewCard
-                  name="Mike Chen"
-                  role="Tech Lead"
+                  name="Manpreet Singh"
+                  role="Full Stack Developer"
                   avatar="👨‍💼"
                   rating={5}
                   review="Excellent problem-solving abilities and quick learner. Keshav delivered our project ahead of schedule."
                 />
                 <ReviewCard
-                  name="Emma Davis"
+                  name="Bhavuk Ahuja"
                   role="UX Designer"
                   avatar="👩‍🎨"
                   rating={5}
                   review="Great collaboration skills! Keshav perfectly implemented our design vision with smooth animations."
                 />
                 <ReviewCard
-                  name="Alex Rodriguez"
-                  role="Project Manager"
+                  name="Gurman Singh Dhami"
+                  role="Mern Stack Developer"
                   avatar="👨‍💻"
                   rating={5}
                   review="Reliable and communicative. Keshav's full-stack expertise helped us build a robust application."
                 />
                 <ReviewCard
-                  name="Lisa Wang"
-                  role="Senior Developer"
+                  name="Rutansh Chawla"
+                  role="Backend Developer"
                   avatar="👩‍💻"
                   rating={5}
                   review="Impressed by Keshav's Node.js and MongoDB skills. His API development is clean and efficient."
@@ -456,36 +584,36 @@ const About = () => {
 
                 {/* Duplicate set for seamless loop */}
                 <ReviewCard
-                  name="Sarah Johnson"
+                  name="Krish Puri"
                   role="Frontend Developer"
                   avatar="👩‍💻"
                   rating={5}
                   review="Keshav's React skills are impressive! His clean code and attention to detail make him a pleasure to work with."
                 />
                 <ReviewCard
-                  name="Mike Chen"
-                  role="Tech Lead"
+                  name="Manpreet Singh"
+                  role="Full Stack Developer"
                   avatar="👨‍💼"
                   rating={5}
                   review="Excellent problem-solving abilities and quick learner. Keshav delivered our project ahead of schedule."
                 />
                 <ReviewCard
-                  name="Emma Davis"
+                  name="Bhavuk Ahuja"
                   role="UX Designer"
                   avatar="👩‍🎨"
                   rating={5}
                   review="Great collaboration skills! Keshav perfectly implemented our design vision with smooth animations."
                 />
                 <ReviewCard
-                  name="Alex Rodriguez"
-                  role="Project Manager"
+                  name="Gurman Singh Dhami"
+                  role="Mern Stack Developer"
                   avatar="👨‍💻"
                   rating={5}
                   review="Reliable and communicative. Keshav's full-stack expertise helped us build a robust application."
                 />
                 <ReviewCard
-                  name="Lisa Wang"
-                  role="Senior Developer"
+                  name="Rutansh Chawla"
+                  role="Backend Developer"
                   avatar="👩‍💻"
                   rating={5}
                   review="Impressed by Keshav's Node.js and MongoDB skills. His API development is clean and efficient."
@@ -502,76 +630,76 @@ const About = () => {
               <div className="animate-scroll-down space-y-6">
                 {/* First set of reviews */}
                 <ReviewCard
-                  name="David Park"
-                  role="CTO"
-                  avatar="👨‍💼"
-                  rating={5}
-                  review="Keshav's passion for learning new technologies is evident. He quickly adapted to our tech stack."
-                />
-                <ReviewCard
-                  name="Jennifer Lee"
-                  role="Full Stack Developer"
+                  name="Krish Puri"
+                  role="Frontend Developer"
                   avatar="👩‍💻"
                   rating={5}
-                  review="Outstanding work on our MERN stack project. Keshav's code quality and documentation are top-notch."
+                  review="Keshav's React skills are impressive! His clean code and attention to detail make him a pleasure to work with."
                 />
                 <ReviewCard
-                  name="Robert Taylor"
-                  role="Software Engineer"
+                  name="Manpreet Singh"
+                  role="Full Stack Developer"
+                  avatar="👨‍💼"
+                  rating={5}
+                  review="Excellent problem-solving abilities and quick learner. Keshav delivered our project ahead of schedule."
+                />
+                <ReviewCard
+                  name="Bhavuk Ahuja"
+                  role="UX Designer"
+                  avatar="👩‍🎨"
+                  rating={5}
+                  review="Great collaboration skills! Keshav perfectly implemented our design vision with smooth animations."
+                />
+                <ReviewCard
+                  name="Gurman Singh Dhami"
+                  role="Mern Stack Developer"
                   avatar="👨‍💻"
                   rating={5}
-                  review="Creative problem solver with excellent debugging skills. Keshav helped us overcome complex challenges."
+                  review="Reliable and communicative. Keshav's full-stack expertise helped us build a robust application."
                 />
                 <ReviewCard
-                  name="Maria Garcia"
-                  role="Product Manager"
-                  avatar="👩‍💼"
+                  name="Rutansh Chawla"
+                  role="Backend Developer"
+                  avatar="👩‍💻"
                   rating={5}
-                  review="Keshav understands user requirements well and translates them into excellent technical solutions."
-                />
-                <ReviewCard
-                  name="Tom Wilson"
-                  role="DevOps Engineer"
-                  avatar="👨‍💻"
-                  rating={5}
-                  review="Solid understanding of deployment processes. Keshav's applications are well-structured and scalable."
+                  review="Impressed by Keshav's Node.js and MongoDB skills. His API development is clean and efficient."
                 />
 
                 {/* Duplicate set for seamless loop */}
                 <ReviewCard
-                  name="David Park"
-                  role="CTO"
-                  avatar="👨‍💼"
-                  rating={5}
-                  review="Keshav's passion for learning new technologies is evident. He quickly adapted to our tech stack."
-                />
-                <ReviewCard
-                  name="Jennifer Lee"
-                  role="Full Stack Developer"
+                  name="Krish Puri"
+                  role="Frontend Developer"
                   avatar="👩‍💻"
                   rating={5}
-                  review="Outstanding work on our MERN stack project. Keshav's code quality and documentation are top-notch."
+                  review="Keshav's React skills are impressive! His clean code and attention to detail make him a pleasure to work with."
                 />
                 <ReviewCard
-                  name="Robert Taylor"
-                  role="Software Engineer"
+                  name="Manpreet Singh"
+                  role="Full Stack Developer"
+                  avatar="👨‍💼"
+                  rating={5}
+                  review="Excellent problem-solving abilities and quick learner. Keshav delivered our project ahead of schedule."
+                />
+                <ReviewCard
+                  name="Bhavuk Ahuja"
+                  role="UX Designer"
+                  avatar="👩‍🎨"
+                  rating={5}
+                  review="Great collaboration skills! Keshav perfectly implemented our design vision with smooth animations."
+                />
+                <ReviewCard
+                  name="Gurman Singh Dhami"
+                  role="Mern Stack Developer"
                   avatar="👨‍💻"
                   rating={5}
-                  review="Creative problem solver with excellent debugging skills. Keshav helped us overcome complex challenges."
+                  review="Reliable and communicative. Keshav's full-stack expertise helped us build a robust application."
                 />
                 <ReviewCard
-                  name="Maria Garcia"
-                  role="Product Manager"
-                  avatar="👩‍💼"
+                  name="Rutansh Chawla"
+                  role="Backend Developer"
+                  avatar="👩‍💻"
                   rating={5}
-                  review="Keshav understands user requirements well and translates them into excellent technical solutions."
-                />
-                <ReviewCard
-                  name="Tom Wilson"
-                  role="DevOps Engineer"
-                  avatar="👨‍💻"
-                  rating={5}
-                  review="Solid understanding of deployment processes. Keshav's applications are well-structured and scalable."
+                  review="Impressed by Keshav's Node.js and MongoDB skills. His API development is clean and efficient."
                 />
               </div>
               
@@ -587,118 +715,76 @@ const About = () => {
               <div className="animate-scroll-up-mobile space-y-4">
                 {/* All reviews in single column for mobile */}
                 <ReviewCard
-                  name="Sarah Johnson"
+                  name="Krish Puri"
                   role="Frontend Developer"
                   avatar="👩‍💻"
                   rating={5}
                   review="Keshav's React skills are impressive! His clean code and attention to detail make him a pleasure to work with."
                 />
                 <ReviewCard
-                  name="Mike Chen"
-                  role="Tech Lead"
+                  name="Manpreet Singh"
+                  role="Full Stack Developer"
                   avatar="👨‍💼"
                   rating={5}
                   review="Excellent problem-solving abilities and quick learner. Keshav delivered our project ahead of schedule."
                 />
                 <ReviewCard
-                  name="Emma Davis"
+                  name="Bhavuk Ahuja"
                   role="UX Designer"
                   avatar="👩‍🎨"
                   rating={5}
                   review="Great collaboration skills! Keshav perfectly implemented our design vision with smooth animations."
                 />
                 <ReviewCard
-                  name="David Park"
-                  role="CTO"
-                  avatar="👨‍💼"
-                  rating={5}
-                  review="Keshav's passion for learning new technologies is evident. He quickly adapted to our tech stack."
-                />
-                <ReviewCard
-                  name="Jennifer Lee"
-                  role="Full Stack Developer"
-                  avatar="👩‍💻"
-                  rating={5}
-                  review="Outstanding work on our MERN stack project. Keshav's code quality and documentation are top-notch."
-                />
-                <ReviewCard
-                  name="Alex Rodriguez"
-                  role="Project Manager"
+                  name="Gurman Singh Dhami"
+                  role="Mern Stack Developer"
                   avatar="👨‍💻"
                   rating={5}
                   review="Reliable and communicative. Keshav's full-stack expertise helped us build a robust application."
                 />
                 <ReviewCard
-                  name="Lisa Wang"
-                  role="Senior Developer"
+                  name="Rutansh Chawla"
+                  role="Backend Developer"
                   avatar="👩‍💻"
                   rating={5}
                   review="Impressed by Keshav's Node.js and MongoDB skills. His API development is clean and efficient."
-                />
-                <ReviewCard
-                  name="Robert Taylor"
-                  role="Software Engineer"
-                  avatar="👨‍💻"
-                  rating={5}
-                  review="Creative problem solver with excellent debugging skills. Keshav helped us overcome complex challenges."
                 />
 
                 {/* Duplicate set for seamless loop */}
                 <ReviewCard
-                  name="Sarah Johnson"
+                  name="Krish Puri"
                   role="Frontend Developer"
                   avatar="👩‍💻"
                   rating={5}
                   review="Keshav's React skills are impressive! His clean code and attention to detail make him a pleasure to work with."
                 />
                 <ReviewCard
-                  name="Mike Chen"
-                  role="Tech Lead"
+                  name="Manpreet Singh"
+                  role="Full Stack Developer"
                   avatar="👨‍💼"
                   rating={5}
                   review="Excellent problem-solving abilities and quick learner. Keshav delivered our project ahead of schedule."
                 />
                 <ReviewCard
-                  name="Emma Davis"
+                  name="Bhavuk Ahuja"
                   role="UX Designer"
                   avatar="👩‍🎨"
                   rating={5}
                   review="Great collaboration skills! Keshav perfectly implemented our design vision with smooth animations."
                 />
                 <ReviewCard
-                  name="David Park"
-                  role="CTO"
-                  avatar="👨‍💼"
-                  rating={5}
-                  review="Keshav's passion for learning new technologies is evident. He quickly adapted to our tech stack."
-                />
-                <ReviewCard
-                  name="Jennifer Lee"
-                  role="Full Stack Developer"
-                  avatar="👩‍💻"
-                  rating={5}
-                  review="Outstanding work on our MERN stack project. Keshav's code quality and documentation are top-notch."
-                />
-                <ReviewCard
-                  name="Alex Rodriguez"
-                  role="Project Manager"
+                  name="Gurman Singh Dhami"
+                  role="Mern Stack Developer"
                   avatar="👨‍💻"
                   rating={5}
                   review="Reliable and communicative. Keshav's full-stack expertise helped us build a robust application."
                 />
                 <ReviewCard
-                  name="Lisa Wang"
-                  role="Senior Developer"
+                  name="Rutansh Chawla"
+                  role="Backend Developer"
                   avatar="👩‍💻"
                   rating={5}
                   review="Impressed by Keshav's Node.js and MongoDB skills. His API development is clean and efficient."
-                />
-                <ReviewCard
-                  name="Robert Taylor"
-                  role="Software Engineer"
-                  avatar="👨‍💻"
-                  rating={5}
-                  review="Creative problem solver with excellent debugging skills. Keshav helped us overcome complex challenges."
                 />
               </div>
               
