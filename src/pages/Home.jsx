@@ -100,36 +100,115 @@ const Home = () => {
       />
 
       {/* Main Content */}
-      <div className="relative z-20 container mx-auto px-4 py-20 ">
-        <section className="text-center mb-24">
-          <h1 className="text-5xl md:text-7xl font-bold text-base-content mb-6">
-            Hi, I'm{" "}
-            <span className="bg-gradient-to-r  from-primary to-secondary bg-clip-text text-transparent">
-              KESHAV
-            </span>
-          </h1>
-          <p className="text-2xl text-base-content/80 mb-4">
-            Third Semester Student | MERN Stack Developer{" "}
-          </p>
-          <p className="text-base-content/60 max-w-2xl mx-auto mb-10">
-            Passionate about building mern-stack applications, I enjoy solving
-            real-world problems through code. Currently navigating the exciting
-            journey of software development while pursuing my B.Tech. Let's
-            build something amazing together!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={navigateProject}
-              className="btn btn-primary rounded-full px-8"
-            >
-              View My Work
-            </button>
-            <button
-              onClick={navigateContact}
-              className="btn btn-outline rounded-full px-8"
-            >
-              Get in touch
-            </button>
+      <div className="relative z-20 container mx-auto px-4 py-20">
+        <section className="mb-24">
+          <div className="flex flex-col lg:flex-row items-center justify-between min-h-[70vh] gap-8">
+            {/* Left Content */}
+            <div className="flex-1 max-w-2xl space-y-8 lg:pl-30">
+              <div className="space-y-6">
+                <div className="overflow-hidden">
+                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-base-content leading-tight animate-slide-up">
+                    Hi, I'm{" "}
+                    <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                      KESHAV
+                    </span>
+                  </h1>
+                </div>
+                
+                <div className="overflow-hidden">
+                  <p className="text-xl md:text-2xl text-base-content/80 font-medium animate-slide-up-delay-1">
+                    Full-Stack Developer | MERN Stack & Gen-AI Enthusiast
+                  </p>
+                </div>
+              </div>
+              
+              <div className="overflow-hidden">
+                <p className="text-base-content/70 text-lg leading-relaxed animate-slide-up-delay-2">
+                  Passionate about building innovative MERN stack applications with cutting-edge 
+                  Gen-AI integration. I specialize in creating intelligent web solutions that solve 
+                  real-world problems through code and artificial intelligence.
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-slide-up-delay-3">
+                <button
+                  onClick={navigateProject}
+                  className="btn btn-primary rounded-full px-8 py-3 text-lg transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
+                >
+                  Explore My Projects
+                </button>
+                <button
+                  onClick={navigateContact}
+                  className="btn btn-outline rounded-full px-8 py-3 text-lg transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
+                >
+                  Let's Connect
+                </button>
+              </div>
+            </div>
+
+            {/* Right Content - Floating Tech Icons */}
+            <div className="flex-1 flex justify-center lg:justify-end lg:pr-30">
+              <div className="relative w-96 h-96">
+                {/* Animated floating tech badges */}
+                <div className="absolute top-8 left-1/2 transform -translate-x-1/2 animate-float-slow">
+                  <div className="bg-base-200 dark:bg-base-300 border border-base-300 dark:border-base-600 text-base-content px-5 py-3 rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                    React.js
+                  </div>
+                </div>
+                
+                <div className="absolute top-20 right-12 animate-float-slow-delay-1">
+                  <div className="bg-base-200 dark:bg-base-300 border border-base-300 dark:border-base-600 text-base-content px-5 py-3 rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                    Node.js
+                  </div>
+                </div>
+                
+                <div className="absolute top-36 left-8 animate-float-slow-delay-2">
+                  <div className="bg-base-200 dark:bg-base-300 border border-base-300 dark:border-base-600 text-base-content px-5 py-3 rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                    MongoDB
+                  </div>
+                </div>
+                
+                <div className="absolute bottom-36 right-8 animate-float-slow-delay-3">
+                  <div className="bg-base-200 dark:bg-base-300 border border-base-300 dark:border-base-600 text-base-content px-5 py-3 rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                    JavaScript
+                  </div>
+                </div>
+                
+                <div className="absolute bottom-20 left-12 animate-float-slow-delay-4">
+                  <div className="bg-gradient-to-r from-primary/90 to-secondary/90 text-primary-content px-5 py-3 rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                    Gen-AI
+                  </div>
+                </div>
+                
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-float-slow-delay-5">
+                  <div className="bg-base-200 dark:bg-base-300 border border-base-300 dark:border-base-600 text-base-content px-5 py-3 rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                    Express.js
+                  </div>
+                </div>
+                
+                {/* Central glowing orb */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <div className="w-28 h-28 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full animate-pulse-slow"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-full animate-pulse-slow-delay"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-gradient-to-r from-primary/40 to-secondary/40 rounded-full animate-spin-slow"></div>
+                </div>
+                
+                {/* Connecting lines */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <svg className="w-full h-full opacity-20">
+                    <defs>
+                      <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" className="text-primary" stopColor="currentColor" stopOpacity="0.3"/>
+                        <stop offset="100%" className="text-secondary" stopColor="currentColor" stopOpacity="0.1"/>
+                      </linearGradient>
+                    </defs>
+                    <circle cx="50%" cy="50%" r="120" fill="none" stroke="url(#lineGradient)" strokeWidth="1" strokeDasharray="5,5">
+                      <animateTransform attributeName="transform" type="rotate" values="0 192 192;360 192 192" dur="30s" repeatCount="indefinite"/>
+                    </circle>
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -186,7 +265,7 @@ const Home = () => {
                 <path d="M12 12V4l9 5-9 5-9-5 9-5z" />
               </svg>
             </div>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-primary mb-2">5+</h3>
+            <h3 className="text-3xl md:text-4xl font-extrabold text-primary mb-2">8+</h3>
             <p className="text-base-content/70 font-medium text-sm md:text-base">
               Projects Completed
             </p>
@@ -205,9 +284,9 @@ const Home = () => {
                 <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
               </svg>
             </div>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-secondary mb-2">1+</h3>
+            <h3 className="text-3xl md:text-4xl font-extrabold text-secondary mb-2">2+</h3>
             <p className="text-base-content/70 font-medium text-sm md:text-base">
-              Years of Learning
+              Years of Innovation
             </p>
           </div>
 
@@ -224,8 +303,8 @@ const Home = () => {
                 <path d="M14 10V3.5a.5.5 0 0 0-.85-.35l-7.3 7.3a1.5 1.5 0 0 0 0 2.1l7.3 7.3a.5.5 0 0 0 .85-.35V14h5a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-5z" />
               </svg>
             </div>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-accent mb-2">10+</h3>
-            <p className="text-base-content/70 font-medium text-sm md:text-base">Skills Mastered</p>
+            <h3 className="text-3xl md:text-4xl font-extrabold text-accent mb-2">15+</h3>
+            <p className="text-base-content/70 font-medium text-sm md:text-base">Technologies Mastered</p>
           </div>
         </section>
       </div>
@@ -240,6 +319,101 @@ const Home = () => {
           50% {
             transform: translateY(-15px) rotate(2deg);
           }
+        }
+        
+        @keyframes slide-up {
+          from {
+            transform: translateY(100px);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+        
+        @keyframes float-slow {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+        }
+        
+        @keyframes pulse-slow {
+          0%, 100% {
+            transform: scale(1);
+            opacity: 0.2;
+          }
+          50% {
+            transform: scale(1.1);
+            opacity: 0.4;
+          }
+        }
+        
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        
+        .animate-slide-up {
+          animation: slide-up 0.8s ease-out forwards;
+        }
+        
+        .animate-slide-up-delay-1 {
+          animation: slide-up 0.8s ease-out 0.2s forwards;
+          opacity: 0;
+        }
+        
+        .animate-slide-up-delay-2 {
+          animation: slide-up 0.8s ease-out 0.4s forwards;
+          opacity: 0;
+        }
+        
+        .animate-slide-up-delay-3 {
+          animation: slide-up 0.8s ease-out 0.6s forwards;
+          opacity: 0;
+        }
+        
+        .animate-float-slow {
+          animation: float-slow 4s ease-in-out infinite;
+        }
+        
+        .animate-float-slow-delay-1 {
+          animation: float-slow 4s ease-in-out infinite 0.5s;
+        }
+        
+        .animate-float-slow-delay-2 {
+          animation: float-slow 4s ease-in-out infinite 1s;
+        }
+        
+        .animate-float-slow-delay-3 {
+          animation: float-slow 4s ease-in-out infinite 1.5s;
+        }
+        
+        .animate-float-slow-delay-4 {
+          animation: float-slow 4s ease-in-out infinite 2s;
+        }
+        
+        .animate-float-slow-delay-5 {
+          animation: float-slow 4s ease-in-out infinite 2.5s;
+        }
+        
+        .animate-pulse-slow {
+          animation: pulse-slow 3s ease-in-out infinite;
+        }
+        
+        .animate-pulse-slow-delay {
+          animation: pulse-slow 3s ease-in-out infinite 1s;
+        }
+        
+        .animate-spin-slow {
+          animation: spin-slow 20s linear infinite;
         }
       `}</style>
     </div>
