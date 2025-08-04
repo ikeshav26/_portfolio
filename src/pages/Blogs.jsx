@@ -37,75 +37,79 @@ const Blogs = () => {
   id: 1,
   title: "ElevateCV-AI: AI-Powered Resume, Letter & Interview Generator",
   excerpt:
-    "An all-in-one platform for building AI-generated resumes, cover letters, and preparing for interviews using Canvas and Google Gemini API.",
+    "A revolutionary Gen-AI platform that transforms career preparation with intelligent resume generation, cover letter creation, and AI-driven interview coaching using Google Gemini API.",
   fullDescription:
-    "ElevateCV-AI is an educational full-stack web app that empowers users to generate professional resumes and cover letters, and even prepare for interviews using AI. Built with the MERN stack and styled with Tailwind CSS, it integrates Gemini AI for content generation and canvas APIs for live resume rendering. It features OTP-based auth, resume/letter visibility toggling, a public explore page, and interview prep with dynamic AI question generation. The app uses LLMs and premium APIs for better accuracy and suggestions. The frontend is React-based, and the backend is secured with Express and MongoDB. Designed for performance, it was deployed using Vercel and Render.",
+    "ElevateCV-AI represents the future of career preparation through artificial intelligence. This comprehensive full-stack web application leverages the power of Google Gemini API to generate professional resumes, craft personalized cover letters, and provide dynamic interview preparation. Built with the MERN stack and enhanced with Tailwind CSS, it seamlessly integrates Gen-AI capabilities with canvas APIs for real-time resume rendering. The platform features secure OTP-based authentication, intelligent content generation, resume/letter visibility controls, a public exploration interface, and AI-powered interview preparation with dynamic question generation. By utilizing Large Language Models and premium AI APIs, the application delivers unprecedented accuracy in career document creation and interview coaching, making it an essential tool for modern job seekers.",
   date: "2025-07-18",
   readTime: "10 min read",
-  image: "📄",
+  image: "🤖",
   tags: [
-    "AI",
-    "Resume Builder",
-    "Interview Prep",
+    "Gen-AI",
+    "Google Gemini",
+    "Resume AI",
+    "Interview Coaching",
     "MERN Stack",
-    "Educational Project",
+    "LLM Integration",
   ],
   techStack: [
     "React",
-    "Node.js",
+    "Node.js", 
     "MongoDB",
     "Express",
     "Tailwind CSS",
-    "Google Gemini",
+    "Google Gemini API",
     "Canvas API",
+    "JWT Auth",
   ],
   challenges: [
-    "Canvas rendering",
-    "AI output accuracy",
-    "Token-based OTP login",
-    "Maintaining theme consistency",
+    "AI prompt optimization",
+    "Canvas rendering with AI data",
+    "LLM response consistency",
+    "Real-time AI generation",
   ],
   achievements: [
-    "AI-generated resumes & letters",
-    "OTP-secured auth system",
-    "Public explore & toggle features",
-    "AI-powered interview questions",
+    "Intelligent resume generation",
+    "AI-powered interview prep",
+    "Seamless Gen-AI integration",
+    "Professional document creation",
   ],
 },{
   id: 2,
-  title: "Interior-AI: AI Interior Design Visualizer",
+  title: "Interior-AI: Revolutionary AI Interior Design Visualizer",
   excerpt:
-    "Transform your room's look using AI—an app that generates stunning room designs from just prompt using the Replicate API.",
+    "Transform any space instantly with Gen-AI technology—an intelligent app that creates stunning room designs from natural language prompts using advanced AI models.",
   fullDescription:
-    "Interior-AI is a creative and intuitive web app that uses AI to imagine interior spaces. Built with React and Node.js, it allows users to give prompt and choose a design theme. The app sends the data to the Replicate API which returns AI-generated redesigned versions of the room. Users can view, download, or regenerate new designs instantly. I focused on the frontend UX with smooth transitions, modals, image previews, and file validation. The backend handles image uploads securely and forwards requests to the AI API. This app showcases how AI can be applied in home decor and visual design.",
+    "Interior-AI showcases the transformative power of generative artificial intelligence in interior design. This innovative web application utilizes state-of-the-art AI models through the Replicate API to reimagine interior spaces based on natural language descriptions. Built with React and Node.js, the platform allows users to input room descriptions and select design themes, which are then processed by sophisticated AI algorithms to generate photorealistic room transformations. The application demonstrates advanced AI integration with smooth user experiences, featuring real-time image processing, secure file handling, and intelligent design suggestions. This project highlights the practical applications of Gen-AI in creative industries, proving how artificial intelligence can democratize professional interior design.",
   date: "2025-05-02",
   readTime: "7 min read",
-  image: "🛋️",
+  image: "🎨",
   tags: [
-    "AI",
-    "Interior Design",
-    "React App",
+    "Gen-AI",
     "Computer Vision",
-    "Creative Tools",
+    "Replicate API",
+    "AI Design",
+    "Creative AI",
+    "Image Generation",
   ],
   techStack: [
     "React",
     "Node.js",
     "Tailwind CSS",
-    "Replicate API",
+    "Replicate AI API",
     "Cloudinary",
+    "AI Models",
   ],
   challenges: [
-    "Image upload & preview",
-    "API rate limits",
-    "Design realism vs speed",
-    "Responsive layout for image results",
+    "AI model selection",
+    "Prompt engineering optimization",
+    "Real-time AI processing",
+    "AI-generated image quality",
   ],
   achievements: [
-    "AI-based room transformation",
-    "Secure image handling",
-    "Real-time previews",
-    "User-friendly design selector",
+    "Photorealistic AI transformations",
+    "Natural language processing",
+    "Advanced AI model integration",
+    "Intelligent design automation",
   ],
 },{
       id: 3,
@@ -132,40 +136,42 @@ const Blogs = () => {
     },
     {
       id: 4,
-      title: "FitAI: Building an AI-Powered Fitness Web App",
+      title: "FitAI: Building an Intelligent AI-Powered Health Assistant",
       excerpt:
-        "How our team created an intelligent fitness assistant using React, Flask, and machine learning to provide health insights.",
+        "How our team created a comprehensive AI health companion using React, Flask, and machine learning to provide personalized health insights and predictions.",
       fullDescription:
-        "FitAI is a full-stack fitness assistant developed as a team project. We used React for the frontend and Flask for the backend, integrating a machine learning model (RandomForestClassifier) to predict health risks based on user input. Users can enter metrics like age, BMI, and heart rate to receive predictions and visual insights. I focused on frontend development, ensuring a responsive UI with Tailwind CSS, form validation, and smooth data flow. The backend team handled ML training and REST API development. We also integrated Streamlit for rapid prototyping and Gemini API for AI-based suggestions. The project was deployed using Vercel and Streamlit sharing.",
+        "FitAI represents the convergence of artificial intelligence and healthcare technology. This sophisticated full-stack health assistant was developed as a collaborative team project, utilizing React for an intuitive frontend and Flask for a robust backend infrastructure. The application integrates advanced machine learning algorithms, specifically a RandomForestClassifier model, to analyze user health metrics and provide intelligent risk assessments. Users can input comprehensive health data including age, BMI, heart rate, and lifestyle factors to receive AI-generated predictions and visual health insights. The project features seamless integration with the Gemini API for enhanced AI-powered health recommendations, demonstrating how artificial intelligence can be applied to personal healthcare. Our team successfully deployed this intelligent health platform using modern cloud technologies, showcasing the practical applications of AI in improving personal health management.",
       date: "2024-11-20",
       readTime: "9 min read",
-      image: "💪",
+      image: "🧠",
       tags: [
+        "AI Healthcare",
         "Machine Learning",
-        "React",
-        "Flask",
-        "HealthTech",
+        "Gemini API",
+        "Health Tech",
+        "Predictive AI",
         "Team Project",
       ],
       techStack: [
         "React",
         "Flask",
         "Python",
-        "RandomForest",
+        "RandomForest ML",
+        "Gemini API",
         "Streamlit",
-        "Tailwind CSS",
+        "AI Models",
       ],
       challenges: [
-        "Model integration",
-        "Team coordination",
-        "Backend deployment",
-        "User-friendly health form UX",
+        "AI model accuracy optimization",
+        "Health data processing",
+        "Real-time AI predictions",
+        "Team AI integration workflow",
       ],
       achievements: [
-        "ML-based disease prediction",
-        "Team collaboration",
-        "Flask REST API",
-        "Streamlit demo",
+        "Intelligent health risk prediction",
+        "AI-powered recommendations",
+        "Advanced ML model deployment",
+        "Collaborative AI development",
       ],
     }
   ];
@@ -222,8 +228,8 @@ const Blogs = () => {
           </span>
         </h1>
         <p className="text-lg text-base-content/80 max-w-2xl mx-auto leading-relaxed">
-          Sharing my full-stack builds, creative UI experiments, and lessons
-          from building real-world web applications.
+          Sharing my Gen-AI powered builds, MERN stack innovations, and lessons
+          from building intelligent web applications with cutting-edge AI integration.
         </p>
       </motion.section>
 
@@ -376,7 +382,7 @@ const Blogs = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-8 rounded-full"></div>
 
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-base-content">
-            More Projects
+            More Gen-AI Projects
             <span className="text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text">
               {" "}
               Coming Soon!
@@ -384,9 +390,9 @@ const Blogs = () => {
           </h2>
 
           <p className="text-base-content/70 mb-8 text-lg leading-relaxed max-w-2xl mx-auto">
-            I'm constantly working on new projects and learning new
-            technologies. Stay tuned for more exciting developments and detailed
-            project breakdowns!
+            I'm constantly exploring new frontiers in artificial intelligence and
+            generative AI technologies. Stay tuned for more innovative AI-powered
+            projects and detailed technical breakdowns of cutting-edge implementations!
           </p>
 
           <div className="flex items-center justify-center gap-4 mb-6">
