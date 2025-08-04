@@ -10,6 +10,7 @@ import {
   FaRocket,
   FaHeart,
 } from "react-icons/fa";
+import { RiNextjsFill } from "react-icons/ri";
 import {
   SiMongodb,
   SiTailwindcss,
@@ -22,6 +23,8 @@ import {
 import { VscVscode } from "react-icons/vsc";
 import { useNavigate } from "react-router-dom";
 import ReviewCard from "../components/ReviewCard"; 
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 const About = () => {
   const [activeCategory, setActiveCategory] = useState(0);
@@ -35,6 +38,7 @@ const About = () => {
   const mouseTimer = useRef(null);
   const rafId = useRef(null);
   const navigate = useNavigate();
+  
 
 
   const words = ["Developer", "Student", "Learner", "Creator", "Innovator"];
@@ -48,11 +52,11 @@ const About = () => {
       if (typedText.length < currentWord.length) {
         timeout = setTimeout(() => {
           setTypedText(currentWord.slice(0, typedText.length + 1));
-        }, 80); // Reduced from 100ms to 80ms
+        }, 80); 
       } else {
         timeout = setTimeout(() => {
           setIsTyping(false);
-        }, 800); // Reduced from 1000ms to 800ms
+        }, 800); 
       }
     } else {
       if (typedText.length > 0) {
@@ -68,10 +72,10 @@ const About = () => {
     return () => clearTimeout(timeout);
   }, [typedText, isTyping, currentWordIndex, words]);
 
-  // Ultra-smooth mouse tracking with optimized performance
+  
   useEffect(() => {
     let lastTime = 0;
-    const throttleDelay = 16; // 60fps for ultra-smooth movement
+    const throttleDelay = 16; 
 
     const handleMouseMove = (e) => {
       const now = Date.now();
@@ -86,7 +90,7 @@ const About = () => {
 
       mouseTimer.current = setTimeout(() => {
         setIsMouseMoving(false);
-      }, 500); // Reduced from 1000ms to 500ms
+      }, 500); 
 
       if (rafId.current) {
         cancelAnimationFrame(rafId.current);
@@ -116,8 +120,8 @@ const About = () => {
       x: Math.random() * 100,
       y: Math.random() * 100,
       size: Math.random() * 200 + 100,
-      duration: Math.random() * 6 + 8, // Reduced from 10+15 to 6+8 for faster movement
-      delay: Math.random() * 2, // Reduced from 5 to 2 for quicker start
+      duration: Math.random() * 6 + 8, 
+      delay: Math.random() * 2, 
     }));
   }, []);
 
@@ -130,6 +134,12 @@ const About = () => {
           name: "React.js",
           icon: <FaReact color="#61DAFB" />,
           description: "Frontend library",
+          level: 85,
+        },
+        {
+          name: "Next.js",
+          icon: <RiNextjsFill color="text-base-content" />,
+          description: "Frontend framework",
           level: 85,
         },
         {
@@ -159,6 +169,36 @@ const About = () => {
       ],
     },
     {
+      title: "Data Structures & Algorithms",
+      color: "from-indigo-500 to-purple-600",
+      technologies: [
+        {
+          name: "Arrays & Strings",
+          icon: <FaCode color="#667eea" />,
+          description: "Linear data structures",
+          level: 75,
+        },
+        // {
+        //   name: "Trees & Graphs",
+        //   icon: <FaCode color="#764ba2" />,
+        //   description: "Hierarchical structures",
+        //   level: 65,
+        // },
+        {
+          name: "Dynamic Programming",
+          icon: <FaCode color="#f093fb" />,
+          description: "Optimization techniques",
+          level: 60,
+        },
+        {
+          name: "Sorting & Searching",
+          icon: <FaCode color="#4facfe" />,
+          description: "Algorithmic fundamentals",
+          level: 80,
+        },
+      ],
+    },
+    {
       title: "Tools & Platforms",
       color: "from-green-500 to-teal-500",
       technologies: [
@@ -167,6 +207,12 @@ const About = () => {
           icon: <VscVscode color="#007ACC" />,
           description: "Code editor",
           level: 95,
+        },
+        {
+          name: "IntelliJ IDEA",
+          icon: <FaCode color="text-base-content" />,
+          description: "Java IDE",
+          level: 75,
         },
         {
           name: "Postman",
@@ -232,36 +278,6 @@ const About = () => {
           name: "Jupyter",
           icon: <SiJupyter color="#F37626" />,
           description: "Notebook IDE",
-          level: 80,
-        },
-      ],
-    },
-    {
-      title: "Data Structures & Algorithms",
-      color: "from-indigo-500 to-purple-600",
-      technologies: [
-        {
-          name: "Arrays & Strings",
-          icon: <FaCode color="#667eea" />,
-          description: "Linear data structures",
-          level: 75,
-        },
-        // {
-        //   name: "Trees & Graphs",
-        //   icon: <FaCode color="#764ba2" />,
-        //   description: "Hierarchical structures",
-        //   level: 65,
-        // },
-        {
-          name: "Dynamic Programming",
-          icon: <FaCode color="#f093fb" />,
-          description: "Optimization techniques",
-          level: 60,
-        },
-        {
-          name: "Sorting & Searching",
-          icon: <FaCode color="#4facfe" />,
-          description: "Algorithmic fundamentals",
           level: 80,
         },
       ],
@@ -838,6 +854,25 @@ const About = () => {
           {/* Side fade effects */}
           <div className="absolute top-0 left-0 bottom-0 w-8 bg-gradient-to-r from-base-100 to-transparent pointer-events-none z-30"></div>
           <div className="absolute top-0 right-0 bottom-0 w-8 bg-gradient-to-l from-base-100 to-transparent pointer-events-none z-30"></div>
+        </section>
+
+        {/* Add Review CTA Section */}
+        <section className="text-center max-w-2xl mx-auto">
+          <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl p-8 border border-primary/20 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105">
+            <div className="text-4xl mb-4">💭</div>
+            <h3 className="text-2xl font-bold text-base-content mb-4">
+              Want to Add a Review?
+            </h3>
+            <p className="text-base-content/70 mb-6 text-lg">
+              Worked with me on a project? I'd love to hear your feedback and showcase our collaboration!
+            </p>
+            <button
+              onClick={() => navigate("/contact")}
+              className="btn btn-primary rounded-full px-8 py-3 text-lg font-semibold hover:scale-110 hover:rotate-1 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Share Your Experience ✨
+            </button>
+          </div>
         </section>
 
         {/* Interactive CTA */}
