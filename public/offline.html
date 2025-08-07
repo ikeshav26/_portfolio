@@ -215,7 +215,7 @@
             51%, 100% { opacity: 0.3; }
         }
         
-        /* Theme toggle styles */
+
         .theme-toggle {
             position: absolute;
             top: 1rem;
@@ -237,7 +237,7 @@
             transform: scale(1.1);
         }
         
-        /* Responsive design */
+        
         @media (max-width: 768px) {
             .offline-container {
                 margin: 1rem;
@@ -260,7 +260,7 @@
     </style>
 </head>
 <body>
-    <!-- Floating background elements -->
+    
     <div class="floating-bg">
         <div class="floating-card"></div>
         <div class="floating-card"></div>
@@ -270,7 +270,7 @@
         <div class="floating-card"></div>
     </div>
     
-    <!-- Theme toggle -->
+
     <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
         <span id="theme-icon">🌙</span>
     </button>
@@ -335,7 +335,7 @@
                 retryText.textContent = 'Go Online';
                 retryButton.style.background = 'var(--accent)';
                 
-                // Auto-redirect after 2 seconds
+                
                 setTimeout(() => {
                     window.location.href = '/';
                 }, 2000);
@@ -347,22 +347,22 @@
             }
         }
         
-        // Network event listeners
+        
         window.addEventListener('online', updateNetworkStatus);
         window.addEventListener('offline', updateNetworkStatus);
         
-        // Periodic connectivity check
+        
         setInterval(() => {
             updateNetworkStatus();
         }, 3000);
         
-        // Initialize
+        
         document.addEventListener('DOMContentLoaded', () => {
             loadTheme();
             updateNetworkStatus();
         });
         
-        // Enhanced retry function
+        
         function retryConnection() {
             const retryButton = document.querySelector('.retry-btn');
             const retryText = document.getElementById('retry-text');
@@ -379,7 +379,7 @@
             }, 500);
         }
         
-        // Update retry button click handler
+        
         document.querySelector('.retry-btn').onclick = retryConnection;
     </script>
 </body>
