@@ -11,8 +11,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'robots.txt', 'sitemap.xml', 'offline.html'],
       manifest: {
-        name: 'Ikeshav Portfolio',
-        short_name: 'Ikeshav',
+        name: "Keshav's Portfolio",
+        short_name: 'Keshav',
         description: 'Portfolio of MERN & GenAI Developer',
         theme_color: '#ffffff',
         background_color: '#ffffff',
@@ -23,12 +23,12 @@ export default defineConfig({
           {
             src: 'pwa-192x192.png',
             sizes: '192x192',
-            type: 'image/svg+xml'
+            type: 'image/png'
           },
           {
             src: 'pwa-512x512.png',
             sizes: '512x512',
-            type: 'image/svg+xml'
+            type: 'image/png'
           }
         ]
       },
