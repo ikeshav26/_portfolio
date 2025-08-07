@@ -76,8 +76,8 @@ A modern, responsive portfolio website built with React, featuring smooth animat
 Portfolio-new/
 ├── public/
 │   ├── icons/              # PWA icons and favicons
-│   │   ├── pwa-192x192.svg
-│   │   └── pwa-512x512.svg
+│   │   ├── pwa-192x192.png
+│   │   └── pwa-512x512.png
 │   ├── manifest.webmanifest # PWA manifest
 │   ├── robots.txt          # Search engine directives
 │   ├── sitemap.xml         # Site structure for crawlers
