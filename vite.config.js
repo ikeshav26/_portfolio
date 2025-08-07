@@ -9,7 +9,7 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg', 'robots.txt', 'offline.html'],
+      includeAssets: ['favicon.svg', 'robots.txt', 'sitemap.xml', 'offline.html'],
       manifest: {
         name: 'Ikeshav Portfolio',
         short_name: 'Ikeshav',
