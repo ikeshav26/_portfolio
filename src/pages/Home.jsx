@@ -277,7 +277,7 @@ const Home = () => {
                 <path d="M12 12V4l9 5-9 5-9-5 9-5z" />
               </svg>
             </div>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-primary mb-2">8+</h3>
+            <h3 className="text-3xl md:text-4xl font-extrabold text-primary mb-2">5+</h3>
             <p className="text-base-content/70 font-medium text-sm md:text-base">
               Projects Completed
             </p>
@@ -296,7 +296,7 @@ const Home = () => {
                 <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
               </svg>
             </div>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-secondary mb-2">2+</h3>
+            <h3 className="text-3xl md:text-4xl font-extrabold text-secondary mb-2">1+</h3>
             <p className="text-base-content/70 font-medium text-sm md:text-base">
               Years of Innovation
             </p>
@@ -315,7 +315,7 @@ const Home = () => {
                 <path d="M14 10V3.5a.5.5 0 0 0-.85-.35l-7.3 7.3a1.5 1.5 0 0 0 0 2.1l7.3 7.3a.5.5 0 0 0 .85-.35V14h5a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-5z" />
               </svg>
             </div>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-accent mb-2">15+</h3>
+            <h3 className="text-3xl md:text-4xl font-extrabold text-accent mb-2">20+</h3>
             <p className="text-base-content/70 font-medium text-sm md:text-base">Technologies Mastered</p>
           </div>
         </section>
