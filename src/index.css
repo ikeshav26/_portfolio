@@ -161,7 +161,7 @@
 @layer components {
   /* Card component */
   .card {
-    @apply bg-base-200 dark:bg-base-700 rounded-2xl shadow-md overflow-hidden;
+    @apply bg-base-200  rounded-2xl shadow-md overflow-hidden;
   }
 
   .card-header {

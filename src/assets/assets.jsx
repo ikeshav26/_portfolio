@@ -427,3 +427,150 @@ export const projects = [
     },
     
   ];
+
+
+  //blog-page
+
+export  const blogPosts = [
+    {
+  id: 1,
+  title: "ElevateCV-AI: AI-Powered Resume, Letter & Interview Generator",
+  excerpt:
+    "A revolutionary Gen-AI platform that transforms career preparation with intelligent resume generation, cover letter creation, and AI-driven interview coaching using Google Gemini API.",
+  fullDescription:
+    "ElevateCV-AI represents the future of career preparation through artificial intelligence. This comprehensive full-stack web application leverages the power of Google Gemini API to generate professional resumes, craft personalized cover letters, and provide dynamic interview preparation. Built with the MERN stack and enhanced with Tailwind CSS, it seamlessly integrates Gen-AI capabilities with canvas APIs for real-time resume rendering. The platform features secure OTP-based authentication, intelligent content generation, resume/letter visibility controls, a public exploration interface, and AI-powered interview preparation with dynamic question generation. By utilizing Large Language Models and premium AI APIs, the application delivers unprecedented accuracy in career document creation and interview coaching, making it an essential tool for modern job seekers.",
+  date: "2025-07-18",
+  readTime: "10 min read",
+  image: "🤖",
+  tags: [
+    "Gen-AI",
+    "Google Gemini",
+    "Resume AI",
+    "Interview Coaching",
+    "MERN Stack",
+    "LLM Integration",
+  ],
+  techStack: [
+    "React",
+    "Node.js", 
+    "MongoDB",
+    "Express",
+    "Tailwind CSS",
+    "Google Gemini API",
+    "Canvas API",
+    "JWT Auth",
+  ],
+  challenges: [
+    "AI prompt optimization",
+    "Canvas rendering with AI data",
+    "LLM response consistency",
+    "Real-time AI generation",
+  ],
+  achievements: [
+    "Intelligent resume generation",
+    "AI-powered interview prep",
+    "Seamless Gen-AI integration",
+    "Professional document creation",
+  ],
+},{
+  id: 2,
+  title: "Interior-AI: Revolutionary AI Interior Design Visualizer",
+  excerpt:
+    "Transform any space instantly with Gen-AI technology—an intelligent app that creates stunning room designs from natural language prompts using advanced AI models.",
+  fullDescription:
+    "Interior-AI showcases the transformative power of generative artificial intelligence in interior design. This innovative web application utilizes state-of-the-art AI models through the Replicate API to reimagine interior spaces based on natural language descriptions. Built with React and Node.js, the platform allows users to input room descriptions and select design themes, which are then processed by sophisticated AI algorithms to generate photorealistic room transformations. The application demonstrates advanced AI integration with smooth user experiences, featuring real-time image processing, secure file handling, and intelligent design suggestions. This project highlights the practical applications of Gen-AI in creative industries, proving how artificial intelligence can democratize professional interior design.",
+  date: "2025-05-02",
+  readTime: "7 min read",
+  image: "🎨",
+  tags: [
+    "Gen-AI",
+    "Computer Vision",
+    "Replicate API",
+    "AI Design",
+    "Creative AI",
+    "Image Generation",
+  ],
+  techStack: [
+    "React",
+    "Node.js",
+    "Tailwind CSS",
+    "Replicate AI API",
+    "Cloudinary",
+    "AI Models",
+  ],
+  challenges: [
+    "AI model selection",
+    "Prompt engineering optimization",
+    "Real-time AI processing",
+    "AI-generated image quality",
+  ],
+  achievements: [
+    "Photorealistic AI transformations",
+    "Natural language processing",
+    "Advanced AI model integration",
+    "Intelligent design automation",
+  ],
+},{
+      id: 3,
+      title: "BitBlog: A Full-Stack Blog Platform with Auth & Admin Panel",
+      excerpt:
+        "A powerful MERN-based blog system with rich text editing, user roles, JWT auth, and custom admin dashboard.",
+      fullDescription:
+        "BitBlog is a complete blogging platform I built using the MERN stack. It features user registration/login with secure JWT authentication, a rich text editor for writing articles, and a role-based admin panel for managing posts and users. I focused on building RESTful APIs, MongoDB schema design, and clean React UI with conditional rendering for admin vs normal users. Deployed on Vercel and Render, BitBlog also includes responsive design and optimized performance.",
+      date: "2024-12-10",
+      readTime: "10 min read",
+      image: "📝",
+      tags: ["MERN", "Authentication", "Blog System", "JWT"],
+      techStack: ["MongoDB", "Express.js", "React", "Node.js", "JWT"],
+      challenges: [
+        "Role-based access control",
+        "Token security implementation",
+        "Post management UI",
+      ],
+      achievements: [
+        "Admin dashboard",
+        "Rich-text editor",
+        "JWT authentication",
+      ],
+    },
+    {
+      id: 4,
+      title: "FitAI: Building an Intelligent AI-Powered Health Assistant",
+      excerpt:
+        "How our team created a comprehensive AI health companion using React, Flask, and machine learning to provide personalized health insights and predictions.",
+      fullDescription:
+        "FitAI represents the convergence of artificial intelligence and healthcare technology. This sophisticated full-stack health assistant was developed as a collaborative team project, utilizing React for an intuitive frontend and Flask for a robust backend infrastructure. The application integrates advanced machine learning algorithms, specifically a RandomForestClassifier model, to analyze user health metrics and provide intelligent risk assessments. Users can input comprehensive health data including age, BMI, heart rate, and lifestyle factors to receive AI-generated predictions and visual health insights. The project features seamless integration with the Gemini API for enhanced AI-powered health recommendations, demonstrating how artificial intelligence can be applied to personal healthcare. Our team successfully deployed this intelligent health platform using modern cloud technologies, showcasing the practical applications of AI in improving personal health management.",
+      date: "2024-11-20",
+      readTime: "9 min read",
+      image: "🧠",
+      tags: [
+        "AI Healthcare",
+        "Machine Learning",
+        "Gemini API",
+        "Health Tech",
+        "Predictive AI",
+        "Team Project",
+      ],
+      techStack: [
+        "React",
+        "Flask",
+        "Python",
+        "RandomForest ML",
+        "Gemini API",
+        "Streamlit",
+        "AI Models",
+      ],
+      challenges: [
+        "AI model accuracy optimization",
+        "Health data processing",
+        "Real-time AI predictions",
+        "Team AI integration workflow",
+      ],
+      achievements: [
+        "Intelligent health risk prediction",
+        "AI-powered recommendations",
+        "Advanced ML model deployment",
+        "Collaborative AI development",
+      ],
+    }
+  ];
