@@ -2,20 +2,16 @@ import React, { useState, useEffect, useMemo, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { 
   FaEnvelope, 
-  FaPhone, 
-  FaMapMarkerAlt, 
   FaGithub, 
-  FaLinkedin, 
-  FaTwitter, 
-  FaInstagram,
   FaPaperPlane,
   FaUser,
   FaEdit,
-  FaHeart,
-  FaRocket,
-  FaHandshake
 } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { socialLinks,contactInfo,collaborationTypes } from '../assets/assets';
+import CollabCard from '../components/CollabCard';
+import ContactInfoCard from '../components/ContactInfoCard';
+import SocialLinkCard from '../components/SocialLinkCard';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -34,7 +30,7 @@ const Contact = () => {
   const rafId = useRef(null);
   const navigate = useNavigate();
 
-  // Mouse tracking for smooth blob movement
+
   useEffect(() => {
     let lastTime = 0;
     const throttleDelay = 16;
@@ -75,7 +71,6 @@ const Contact = () => {
     };
   }, []);
 
-  // Floating background elements
   const floatingElements = useMemo(() => {
     return Array.from({ length: 6 }, (_, i) => ({
       id: i,
@@ -87,7 +82,6 @@ const Contact = () => {
     }));
   }, []);
 
-  // Handle form input changes
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -95,13 +89,13 @@ const Contact = () => {
     });
   };
 
-  // Handle form submission with EmailJS
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     
     try {
-      // EmailJS configuration using environment variables
+      
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
@@ -120,7 +114,7 @@ const Contact = () => {
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
       
-      // Reset status after 5 seconds
+    
       setTimeout(() => {
         setSubmitStatus('');
       }, 5000);
@@ -128,7 +122,7 @@ const Contact = () => {
       console.error('Email send failed:', error);
       setSubmitStatus('error');
       
-      // Reset status after 5 seconds
+     
       setTimeout(() => {
         setSubmitStatus('');
       }, 5000);
@@ -137,77 +131,14 @@ const Contact = () => {
     }
   };
 
-  // Contact info data - Fix the email link
-  const contactInfo = [
-    {
-      icon: <FaEnvelope />,
-      title: "Email",
-      value: import.meta.env.VITE_EMAIL_TO || "keshavgilhotra4@gmail.com",
-      link: `mailto:${import.meta.env.VITE_EMAIL_TO || "keshavgilhotra4@gmail.com"}`,
-      color: "text-blue-500"
-    },
-    {
-      icon: <FaMapMarkerAlt />,
-      title: "Location",
-      value: "India",
-      link: "#",
-      color: "text-red-500"
-    }
-  ];
 
-  // Social media links
-  const socialLinks = [
-    {
-      icon: <FaGithub />,
-      name: "GitHub",
-      url: "https://github.com/ikeshav26",
-      color: "hover:text-gray-800 dark:hover:text-gray-200"
-    },
-    {
-      icon: <FaLinkedin />,
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/keshav-gilhotra-615654372?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      color: "hover:text-blue-600"
-    },
-    {
-      icon: <FaTwitter />,
-      name: "Twitter",
-      url: "https://x.com/KeshavGilh5995",
-      color: "hover:text-blue-400"
-    },
-    {
-      icon: <FaInstagram />,
-      name: "Instagram",
-      url: "https://www.instagram.com/keshav_gilhotra_/?hl=en",
-      color: "hover:text-pink-500"
-    }
-  ];
-
-  // Collaboration opportunities
-  const collaborationTypes = [
-    {
-      icon: <FaRocket />,
-      title: "Full Stack Projects",
-      description: "MERN stack web applications and modern web solutions"
-    },
-    {
-      icon: <FaHandshake />,
-      title: "Open Source",
-      description: "Contributing to open source projects and community initiatives"
-    },
-    {
-      icon: <FaHeart />,
-      title: "Learning Together",
-      description: "Knowledge sharing and collaborative learning experiences"
-    }
-  ];
 
   return (
     <div
       ref={containerRef}
       className="min-h-screen bg-base-100 pt-28 pb-24 px-6 sm:px-10 md:px-20 relative overflow-hidden"
     >
-      {/* Floating background blobs */}
+     
       <div className="fixed inset-0 pointer-events-none z-0 opacity-15">
         {floatingElements.map((el) => (
           <div
@@ -230,7 +161,7 @@ const Contact = () => {
         ))}
       </div>
 
-      {/* Interactive cursor */}
+    
       {isMouseMoving && (
         <div
           className="fixed w-5 h-5 bg-primary/40 rounded-full pointer-events-none z-30 blur-sm"
@@ -243,7 +174,7 @@ const Contact = () => {
         />
       )}
 
-      {/* Content */}
+     
       <div className="relative z-10 container mx-auto space-y-20">
         {/* Header Section */}
         <section className="text-center max-w-4xl mx-auto">
@@ -259,38 +190,19 @@ const Contact = () => {
           </p>
         </section>
 
-        {/* Collaboration Opportunities */}
+      
         <section className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-base-content">
             Collaboration Opportunities
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {collaborationTypes.map((type, index) => (
-              <div
-                key={index}
-                className="bg-gradient-to-br from-base-200 to-base-100 dark:from-base-300 dark:to-base-200 rounded-2xl p-8 border border-base-300 dark:border-base-600 text-center hover:scale-105 hover:rotate-1 transition-all duration-300 cursor-pointer"
-                onMouseEnter={() => setHoveredElement(`collab-${index}`)}
-                onMouseLeave={() => setHoveredElement(null)}
-                style={{
-                  animationDelay: `${index * 0.1}s`,
-                  animation: "slideInUp 0.6s ease-out forwards",
-                }}
-              >
-                <div className="text-4xl mb-4 text-primary">
-                  {type.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-base-content">
-                  {type.title}
-                </h3>
-                <p className="text-base-content/70">
-                  {type.description}
-                </p>
-              </div>
+              <CollabCard key={index} type={type} />
             ))}
           </div>
         </section>
 
-        {/* Main Content Grid */}
+       
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
           <div className="bg-gradient-to-br from-base-200 to-base-100 dark:from-base-300 dark:to-base-200 rounded-3xl p-8 shadow-xl border border-base-300 dark:border-base-600 flex flex-col">
@@ -401,28 +313,13 @@ const Contact = () => {
 
           {/* Contact Information */}
           <div className="space-y-8">
-            {/* Contact Details */}
             <div className="bg-gradient-to-br from-base-200 to-base-100 dark:from-base-300 dark:to-base-200 rounded-3xl p-8 shadow-xl border border-base-300 dark:border-base-600">
               <h2 className="text-3xl font-bold mb-6 text-base-content">
                 Get In Touch
               </h2>
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
-                  <a
-                    key={index}
-                    href={info.link}
-                    className="flex items-center gap-4 p-4 rounded-xl hover:bg-base-300 dark:hover:bg-base-600 transition-all duration-300 hover:scale-105"
-                    onMouseEnter={() => setHoveredElement(`contact-${index}`)}
-                    onMouseLeave={() => setHoveredElement(null)}
-                  >
-                    <div className={`text-2xl ${info.color}`}>
-                      {info.icon}
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-base-content">{info.title}</h3>
-                      <p className="text-base-content/70">{info.value}</p>
-                    </div>
-                  </a>
+                  <ContactInfoCard key={index} info={info} />
                 ))}
               </div>
             </div>
@@ -434,20 +331,7 @@ const Contact = () => {
               </h2>
               <div className="grid grid-cols-2 gap-4">
                 {socialLinks.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`flex items-center gap-3 p-4 rounded-xl bg-base-300 dark:bg-base-600 hover:scale-105 transition-all duration-300 ${social.color}`}
-                    onMouseEnter={() => setHoveredElement(`social-${index}`)}
-                    onMouseLeave={() => setHoveredElement(null)}
-                  >
-                    <div className="text-xl">
-                      {social.icon}
-                    </div>
-                    <span className="font-medium">{social.name}</span>
-                  </a>
+                 <SocialLinkCard key={index} social={social} />
                 ))}
               </div>
             </div>

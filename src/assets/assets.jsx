@@ -10,6 +10,12 @@ import {
   FaRocket,
   FaHeart,
   FaFlask,
+  FaEnvelope, 
+  FaMapMarkerAlt, 
+  FaLinkedin, 
+  FaTwitter, 
+  FaInstagram,
+  FaHandshake
 } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 import {
@@ -24,8 +30,7 @@ import {
   SiStreamlit
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
-import { appContext } from "../context/ThemeContext";
-import { useContext } from "react";
+
 
 
 //about-page 
@@ -572,5 +577,72 @@ export  const blogPosts = [
         "Advanced ML model deployment",
         "Collaborative AI development",
       ],
+    }
+  ];
+
+
+  //contact-page
+
+export    const contactInfo = [
+    {
+      icon: <FaEnvelope />,
+      title: "Email",
+      value: import.meta.env.VITE_EMAIL_TO || "keshavgilhotra4@gmail.com",
+      link: `mailto:${import.meta.env.VITE_EMAIL_TO || "keshavgilhotra4@gmail.com"}`,
+      color: "text-blue-500"
+    },
+    {
+      icon: <FaMapMarkerAlt />,
+      title: "Location",
+      value: "India",
+      link: "#",
+      color: "text-red-500"
+    }
+  ];
+
+ 
+export  const socialLinks = [
+    {
+      icon: <FaGithub />,
+      name: "GitHub",
+      url: "https://github.com/ikeshav26",
+      color: "hover:text-gray-800 dark:hover:text-gray-200"
+    },
+    {
+      icon: <FaLinkedin />,
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/keshav-gilhotra-615654372?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      color: "hover:text-blue-600"
+    },
+    {
+      icon: <FaTwitter />,
+      name: "Twitter",
+      url: "https://x.com/KeshavGilh5995",
+      color: "hover:text-blue-400"
+    },
+    {
+      icon: <FaInstagram />,
+      name: "Instagram",
+      url: "https://www.instagram.com/keshav_gilhotra_/?hl=en",
+      color: "hover:text-pink-500"
+    }
+  ];
+
+
+export   const collaborationTypes = [
+    {
+      icon: <FaRocket />,
+      title: "Full Stack Projects",
+      description: "MERN stack web applications and modern web solutions"
+    },
+    {
+      icon: <FaHandshake />,
+      title: "Open Source",
+      description: "Contributing to open source projects and community initiatives"
+    },
+    {
+      icon: <FaHeart />,
+      title: "Learning Together",
+      description: "Knowledge sharing and collaborative learning experiences"
     }
   ];
