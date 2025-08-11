@@ -9,6 +9,7 @@ import {
   FaCode,
   FaRocket,
   FaHeart,
+  FaFlask,
 } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 import {
@@ -19,9 +20,12 @@ import {
   SiOpenai,
   SiMysql,
   SiExpress,
+  SiGooglecloud,
+  SiStreamlit
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
-
+import { appContext } from "../context/ThemeContext";
+import { useContext } from "react";
 
 
 //about-page 
@@ -284,3 +288,142 @@ export const reviews = [
     review: "Impressed by Keshav's Node.js and MongoDB skills. His API development is clean and efficient."
   }
 ];
+
+
+
+//project-page
+
+export const projects = [
+    {
+      id: 1,
+      title: "Fit-AI",
+      description:
+        "An intelligent health diagnostic system that analyzes symptoms and provides disease detection with detailed descriptions. Built with machine learning algorithms for accurate health predictions.",
+      longDescription:
+        "Fit-AI is a comprehensive health diagnostic platform that leverages machine learning to analyze user symptoms and provide accurate disease predictions. The system includes detailed disease descriptions, treatment recommendations, and health insights powered by advanced AI algorithms.",
+      category: "ai",
+      type: "Team Project",
+      techStack: [
+        { name: "Python", icon: <FaPython color="#3776AB" /> },
+        { name: "Jupyter", icon: <SiJupyter color="#F37626" /> },
+        {
+          name: "Flask",
+          icon: <FaFlask className="color-base-content" />,
+        },
+        { name: "Streamlit", icon: <SiStreamlit color="#FF4B4B" /> },
+      ],
+      features: [
+        "Symptom Analysis & Disease Detection",
+        "ML-powered Health Predictions",
+        "Detailed Disease Descriptions",
+        "Interactive Health Dashboard",
+        "Treatment Recommendations",
+      ],
+      github: "https://github.com/ikeshav26/disease-detector",
+      live: "https://fit-ai.mannu.live",
+      image:
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop",
+      status: "Completed",
+      teamSize: "6 Members",
+    },
+    {
+      id: 2,
+      title: "ElevateCV-AI",
+      description:
+        "An AI-powered resume and cover letter generator with interview preparation features built using modern full-stack technologies.",
+      longDescription:
+        "ElevateCV-AI is a complete career toolkit powered by artificial intelligence. Users can create resumes and cover letters with the help of LLMs, explore publicly shared documents, and prepare for interviews through AI-generated questions. Built with a MERN stack and integrated with powerful AI APIs for a seamless experience.",
+      category: "fullstack",
+      type: "Personal Project",
+      techStack: [
+        { name: "React", icon: <FaReact color="#61DAFB" /> },
+        { name: "Node.js", icon: <FaNodeJs color="#3C873A" /> },
+        {
+          name: "Express",
+          icon: <SiExpress className="color-base-content" />,
+        },
+        { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
+        { name: "Google Gemini", icon: <SiGooglecloud color="#4285F4" /> },
+        { name: "Tailwind CSS", icon: <SiTailwindcss color="#38B2AC" /> },
+      ],
+      features: [
+        "AI Resume Generation with Canvas",
+        "AI Cover Letter Writer",
+        "OTP-based Auth with Password Reset",
+        "Explore Public Resumes & Letters",
+        "Interview Preparation with AI",
+        "Responsive, Theme-Aware UI",
+      ],
+      github: "https://github.com/ikeshav26/elevatecv-ai",
+      live: "https://elevatecv-ai.ikeshav.tech",
+      image:"/elevateCV.png",
+      status: "Completed",
+      teamSize: "Solo",
+    },
+    {
+      id: 3,
+      title: "Bit-Blog",
+      description:
+        "A modern blogging platform built with MERN stack where users can create, explore, and manage their blogs. Features rich text editor, user authentication, and social interactions.",
+      longDescription:
+        "Bit-Blog is a full-featured blogging platform that empowers users to share their thoughts and stories. Built with the MERN stack, it offers a seamless writing experience with a rich text editor, user profiles, blog discovery, and engagement features like comments and likes.",
+      category: "fullstack",
+      type: "Personal Project",
+      techStack: [
+        { name: "React", icon: <FaReact color="#61DAFB" /> },
+        { name: "Node.js", icon: <FaNodeJs color="#3C873A" /> },
+        {
+          name: "Express",
+          icon: <SiExpress className="color-base-content" />,
+        },
+        { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
+        { name: "TailwindCSS", icon: <SiTailwindcss color="#38BDF8" /> },
+      ],
+      features: [
+        "Rich Text Blog Editor",
+        "User Authentication & Profiles",
+        "Blog Discovery & Search",
+        "Comments & Social Features",
+        "Responsive Design",
+      ],
+      github: "https://github.com/ikeshav26/blog-app",
+      live: "https://bitblog.ikeshav.tech",
+      image:
+        "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
+      status: "Completed",
+      teamSize: "Solo",
+    },
+    {
+      id: 4,
+      title: "InteriorAI-Interior Designer",
+      description:
+        "InteriorAI lets users create interior designs from text prompts and explore images shared by others. Enter your design idea and get realistic AI-generated visuals for inspiration or planning.",
+      longDescription:
+        "InteriorAI is an AI-powered web app that lets users generate interior design images from text prompts describing their ideal style, colors, or room type. Users simply enter their design ideas and receive realistic, AI-generated visuals matching their vision. They can also browse an Explore page to discover designs shared by others for inspiration. It’s a creative tool for homeowners, designers, and anyone imagining new spaces.",
+      category: "fullstack",
+      type: "Personal Project",
+      techStack: [
+        { name: "React", icon: <FaReact color="#61DAFB" /> },
+        { name: "Node.js", icon: <FaNodeJs color="#3C873A" /> },
+        {
+          name: "Express",
+          icon: <SiExpress className="color-base-content" />,
+        },
+        { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
+        { name: "TailwindCSS", icon: <SiTailwindcss color="#38BDF8" /> },
+      ],
+      features: [
+        "Text-to-Image Interior Design",
+        "Explore Shared Designs",
+        "User-Friendly Interface",
+        "Responsive Design",
+        "Realistic AI-Generated Visuals",
+      ],
+      github: "https://github.com/ikeshav26/ai-interior-design-generator",
+      live: "https://designer.ikeshav.tech",
+      image: "/InteriorAi.png",
+      status: "Completed",
+      teamSize: "Solo",
+    },
+    
+  ];

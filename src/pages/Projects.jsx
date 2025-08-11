@@ -1,33 +1,14 @@
 import React, { useState, useEffect, useMemo, useRef, useContext } from "react";
 import {
   FaGithub,
-  FaExternalLinkAlt,
   FaReact,
-  FaNodeJs,
-  FaPython,
-  FaUsers,
-  FaUser,
   FaCode,
-  FaRobot,
-  FaBlog,
-  FaLink,
-  FaMedkit,
-  FaFlask,
-  FaDatabase,
-  FaJs,
   FaBrain,
 } from "react-icons/fa";
-import {
-  SiMongodb,
-  SiExpress,
-  SiJupyter,
-  SiStreamlit,
-  SiTailwindcss,
-  SiOpenai,
-  SiGooglecloud
-} from "react-icons/si";
 import { Link, useNavigate } from "react-router-dom";
 import { appContext } from "../context/ThemeContext";
+import { projects } from "../assets/assets";
+import ProjectsCard from "../components/ProjectsCard";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -93,141 +74,7 @@ const Projects = () => {
     }));
   }, []);
 
-  // Project data
-  const projects = [
-    {
-      id: 1,
-      title: "Fit-AI",
-      description:
-        "An intelligent health diagnostic system that analyzes symptoms and provides disease detection with detailed descriptions. Built with machine learning algorithms for accurate health predictions.",
-      longDescription:
-        "Fit-AI is a comprehensive health diagnostic platform that leverages machine learning to analyze user symptoms and provide accurate disease predictions. The system includes detailed disease descriptions, treatment recommendations, and health insights powered by advanced AI algorithms.",
-      category: "ai",
-      type: "Team Project",
-      techStack: [
-        { name: "Python", icon: <FaPython color="#3776AB" /> },
-        { name: "Jupyter", icon: <SiJupyter color="#F37626" /> },
-        {
-          name: "Flask",
-          icon: <FaFlask color={theme == "dark" ? "#ffffff" : "#111111"} />,
-        },
-        { name: "Streamlit", icon: <SiStreamlit color="#FF4B4B" /> },
-      ],
-      features: [
-        "Symptom Analysis & Disease Detection",
-        "ML-powered Health Predictions",
-        "Detailed Disease Descriptions",
-        "Interactive Health Dashboard",
-        "Treatment Recommendations",
-      ],
-      github: "https://github.com/ikeshav26/disease-detector",
-      live: "https://fit-ai.mannu.live",
-      image:
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop",
-      status: "Completed",
-      teamSize: "6 Members",
-    },
-    {
-      id: 2,
-      title: "ElevateCV-AI",
-      description:
-        "An AI-powered resume and cover letter generator with interview preparation features built using modern full-stack technologies.",
-      longDescription:
-        "ElevateCV-AI is a complete career toolkit powered by artificial intelligence. Users can create resumes and cover letters with the help of LLMs, explore publicly shared documents, and prepare for interviews through AI-generated questions. Built with a MERN stack and integrated with powerful AI APIs for a seamless experience.",
-      category: "fullstack",
-      type: "Personal Project",
-      techStack: [
-        { name: "React", icon: <FaReact color="#61DAFB" /> },
-        { name: "Node.js", icon: <FaNodeJs color="#3C873A" /> },
-        {
-          name: "Express",
-          icon: <SiExpress color={theme == "dark" ? "#ffffff" : "#111111"} />,
-        },
-        { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
-        { name: "Google Gemini", icon: <SiGooglecloud color="#4285F4" /> },
-        { name: "Tailwind CSS", icon: <SiTailwindcss color="#38B2AC" /> },
-      ],
-      features: [
-        "AI Resume Generation with Canvas",
-        "AI Cover Letter Writer",
-        "OTP-based Auth with Password Reset",
-        "Explore Public Resumes & Letters",
-        "Interview Preparation with AI",
-        "Responsive, Theme-Aware UI",
-      ],
-      github: "https://github.com/ikeshav26/elevatecv-ai",
-      live: "https://elevatecv-ai.ikeshav.tech",
-      image:"/elevateCV.png",
-      status: "Completed",
-      teamSize: "Solo",
-    },
-    {
-      id: 3,
-      title: "Bit-Blog",
-      description:
-        "A modern blogging platform built with MERN stack where users can create, explore, and manage their blogs. Features rich text editor, user authentication, and social interactions.",
-      longDescription:
-        "Bit-Blog is a full-featured blogging platform that empowers users to share their thoughts and stories. Built with the MERN stack, it offers a seamless writing experience with a rich text editor, user profiles, blog discovery, and engagement features like comments and likes.",
-      category: "fullstack",
-      type: "Personal Project",
-      techStack: [
-        { name: "React", icon: <FaReact color="#61DAFB" /> },
-        { name: "Node.js", icon: <FaNodeJs color="#3C873A" /> },
-        {
-          name: "Express",
-          icon: <SiExpress color={theme == "dark" ? "#ffffff" : "#111111"} />,
-        },
-        { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
-        { name: "TailwindCSS", icon: <SiTailwindcss color="#38BDF8" /> },
-      ],
-      features: [
-        "Rich Text Blog Editor",
-        "User Authentication & Profiles",
-        "Blog Discovery & Search",
-        "Comments & Social Features",
-        "Responsive Design",
-      ],
-      github: "https://github.com/ikeshav26/blog-app",
-      live: "https://bitblog.ikeshav.tech",
-      image:
-        "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
-      status: "Completed",
-      teamSize: "Solo",
-    },
-    {
-      id: 4,
-      title: "InteriorAI-Interior Designer",
-      description:
-        "InteriorAI lets users create interior designs from text prompts and explore images shared by others. Enter your design idea and get realistic AI-generated visuals for inspiration or planning.",
-      longDescription:
-        "InteriorAI is an AI-powered web app that lets users generate interior design images from text prompts describing their ideal style, colors, or room type. Users simply enter their design ideas and receive realistic, AI-generated visuals matching their vision. They can also browse an Explore page to discover designs shared by others for inspiration. It’s a creative tool for homeowners, designers, and anyone imagining new spaces.",
-      category: "fullstack",
-      type: "Personal Project",
-      techStack: [
-        { name: "React", icon: <FaReact color="#61DAFB" /> },
-        { name: "Node.js", icon: <FaNodeJs color="#3C873A" /> },
-        {
-          name: "Express",
-          icon: <SiExpress color={theme == "dark" ? "#ffffff" : "#111111"} />,
-        },
-        { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
-        { name: "TailwindCSS", icon: <SiTailwindcss color="#38BDF8" /> },
-      ],
-      features: [
-        "Text-to-Image Interior Design",
-        "Explore Shared Designs",
-        "User-Friendly Interface",
-        "Responsive Design",
-        "Realistic AI-Generated Visuals",
-      ],
-      github: "https://github.com/ikeshav26/ai-interior-design-generator",
-      live: "https://designer.ikeshav.tech",
-      image: "/InteriorAi.png",
-      status: "Completed",
-      teamSize: "Solo",
-    },
-    
-  ];
+
 
   // Filter categories
   const filters = [
@@ -242,20 +89,7 @@ const Projects = () => {
       ? projects
       : projects.filter((project) => project.category === activeFilter);
 
-  const getProjectIcon = (title) => {
-    switch (title.toLowerCase()) {
-      case "fit-ai":
-        return <FaMedkit className="text-2xl" />;
-      case "bit-blog":
-        return <FaBlog className="text-2xl" />;
-      case "url shortener":
-        return <FaLink className="text-2xl" />;
-      case "ai code reviewer":
-        return <FaRobot className="text-2xl" />;
-      default:
-        return <FaCode className="text-2xl" />;
-    }
-  };
+
 
   return (
     <div
@@ -336,107 +170,7 @@ const Projects = () => {
         {/* Projects Grid */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {filteredProjects.map((project, index) => (
-            <div
-              key={project.id}
-              className="bg-gradient-to-br from-base-200 to-base-100 dark:from-base-300 dark:to-base-200 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-base-300 dark:border-base-600 group cursor-pointer"
-              onMouseEnter={() => setHoveredProject(project.id)}
-              onMouseLeave={() => setHoveredProject(null)}
-              style={{
-                animationDelay: `${index * 0.1}s`,
-                animation: "slideInUp 0.6s ease-out forwards",
-              }}
-            >
-              {/* Project Image */}
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <div className="bg-white/20 backdrop-blur-sm rounded-full p-2 text-white">
-                    {getProjectIcon(project.title)}
-                  </div>
-                  <div className="bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 text-white text-sm">
-                    {project.type}
-                  </div>
-                </div>
-                <div className="absolute top-4 right-4">
-                  <div className="px-3 py-1 rounded-full text-xs font-semibold bg-green-500/20 text-green-300 border border-green-500/30">
-                    {project.status}
-                  </div>
-                </div>
-              </div>
-
-              {/* Project Content */}
-              <div className="p-8">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-2xl font-bold text-base-content group-hover:text-primary transition-colors duration-300">
-                    {project.title}
-                  </h3>
-                  <div className="flex items-center gap-1 text-base-content/60">
-                    {project.teamSize === "Solo" ? <FaUser /> : <FaUsers />}
-                    <span className="text-sm">{project.teamSize}</span>
-                  </div>
-                </div>
-
-                <p className="text-base-content/70 mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Tech Stack */}
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-base-content/80 mb-3">
-                    Tech Stack
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.techStack.map((tech, i) => (
-                      <div
-                        key={i}
-                        className="flex items-center gap-2 bg-base-300 dark:bg-base-600 rounded-full px-3 py-1 text-sm"
-                      >
-                        {tech.icon}
-                        <span>{tech.name}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Key Features */}
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-base-content/80 mb-3">
-                    Key Features
-                  </h4>
-                  <ul className="text-sm text-base-content/70 space-y-1">
-                    {project.features.slice(0, 3).map((feature, i) => (
-                      <li key={i} className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-4">
-                  <Link
-                    to={project.github}
-                    className="flex items-center gap-2 bg-base-300 dark:bg-base-600 hover:bg-primary hover:text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105"
-                  >
-                    <FaGithub />
-                    GitHub
-                  </Link>
-                  <Link
-                    to={project.live}
-                    className="flex items-center gap-2 bg-primary text-white hover:bg-primary/80 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105"
-                  >
-                    <FaExternalLinkAlt />
-                    Live Demo
-                  </Link>
-                </div>
-              </div>
-            </div>
+            <ProjectsCard key={project.id} project={project} index={index} />
           ))}
         </section>
 
