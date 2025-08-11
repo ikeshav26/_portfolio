@@ -1,30 +1,13 @@
 import React, { useMemo, useState, useRef, useEffect } from "react";
-import {
-  FaReact,
-  FaNodeJs,
-  FaPython,
-  FaGitAlt,
-  FaGithub,
-  FaJs,
-  FaCode,
-  FaRocket,
-  FaHeart,
-} from "react-icons/fa";
-import { RiNextjsFill } from "react-icons/ri";
-import {
-  SiMongodb,
-  SiTailwindcss,
-  SiJupyter,
-  SiPostman,
-  SiOpenai,
-  SiMysql,
-  SiExpress,
-} from "react-icons/si";
-import { VscVscode } from "react-icons/vsc";
 import { useNavigate } from "react-router-dom";
 import ReviewCard from "../components/ReviewCard"; 
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
+import { techCategories } from "../assets/assets";
+import { stats } from "../assets/assets";
+import { certificates } from "../assets/assets";
+import { reviews } from "../assets/assets";
+import TechCard from "../components/TechCard";
 
 const About = () => {
   const [activeCategory, setActiveCategory] = useState(0);
@@ -62,7 +45,7 @@ const About = () => {
       if (typedText.length > 0) {
         timeout = setTimeout(() => {
           setTypedText(typedText.slice(0, -1));
-        }, 40); // Reduced from 50ms to 40ms
+        }, 40); 
       } else {
         setCurrentWordIndex((prev) => (prev + 1) % words.length);
         setIsTyping(true);
@@ -113,7 +96,7 @@ const About = () => {
     };
   }, []);
 
-  // Floating elements with reduced delays for faster animation
+  
   const floatingElements = useMemo(() => {
     return Array.from({ length: 6 }, (_, i) => ({
       id: i,
@@ -125,192 +108,15 @@ const About = () => {
     }));
   }, []);
 
-  const techCategories = [
-    {
-      title: "Web Development",
-      color: "from-blue-500 to-purple-500",
-      technologies: [
-        {
-          name: "React.js",
-          icon: <FaReact color="#61DAFB" />,
-          description: "Frontend library",
-          level: 85,
-        },
-        {
-          name: "Next.js",
-          icon: <RiNextjsFill color="text-base-content" />,
-          description: "Frontend framework",
-          level: 85,
-        },
-        {
-          name: "Node.js",
-          icon: <FaNodeJs color="#3C873A" />,
-          description: "Backend runtime",
-          level: 80,
-        },
-        {
-          name: "Express.js",
-          icon: <SiExpress className="text-base-content" />,
-          description: "Node.js framework",
-          level: 75,
-        },
-        {
-          name: "JavaScript",
-          icon: <FaJs color="#F7DF1E" />,
-          description: "Core language",
-          level: 90,
-        },
-        {
-          name: "TailwindCSS",
-          icon: <SiTailwindcss color="#38BDF8" />,
-          description: "Utility CSS framework",
-          level: 85,
-        },
-      ],
-    },
-    {
-      title: "Data Structures & Algorithms",
-      color: "from-indigo-500 to-purple-600",
-      technologies: [
-        {
-          name: "Arrays & Strings",
-          icon: <FaCode color="#667eea" />,
-          description: "Linear data structures",
-          level: 75,
-        },
-        // {
-        //   name: "Trees & Graphs",
-        //   icon: <FaCode color="#764ba2" />,
-        //   description: "Hierarchical structures",
-        //   level: 65,
-        // },
-        {
-          name: "Dynamic Programming",
-          icon: <FaCode color="#f093fb" />,
-          description: "Optimization techniques",
-          level: 60,
-        },
-        {
-          name: "Sorting & Searching",
-          icon: <FaCode color="#4facfe" />,
-          description: "Algorithmic fundamentals",
-          level: 80,
-        },
-      ],
-    },
-    {
-      title: "Tools & Platforms",
-      color: "from-green-500 to-teal-500",
-      technologies: [
-        {
-          name: "VS Code",
-          icon: <VscVscode color="#007ACC" />,
-          description: "Code editor",
-          level: 95,
-        },
-        {
-          name: "IntelliJ IDEA",
-          icon: <FaCode color="text-base-content" />,
-          description: "Java IDE",
-          level: 75,
-        },
-        {
-          name: "Postman",
-          icon: <SiPostman color="#FF6C37" />,
-          description: "API tester",
-          level: 80,
-        },
-        {
-          name: "OpenAI",
-          icon: <SiOpenai color="#412991" />,
-          description: "AI tools",
-          level: 70,
-        },
-        {
-          name: "Git",
-          icon: <FaGitAlt color="#F1502F" />,
-          description: "Version control",
-          level: 85,
-        },
-        {
-          name: "GitHub",
-          icon: <FaGithub className="text-base-content" />,
-          description: "Code repo",
-          level: 90,
-        },
-      ],
-    },
-    {
-      title: "Database & Storage",
-      color: "from-orange-500 to-red-500",
-      technologies: [
-        {
-          name: "MongoDB",
-          icon: <SiMongodb color="#47A248" />,
-          description: "NoSQL DB",
-          level: 80,
-        },
-        {
-          name: "MySQL",
-          icon: <SiMysql color="#4479A1" />,
-          description: "SQL DB",
-          level: 75,
-        },
-      ],
-    },
-    {
-      title: "Others",
-      color: "from-purple-500 to-pink-500",
-      technologies: [
-        {
-          name: "Python",
-          icon: <FaPython color="#3776AB" />,
-          description: "General-purpose language",
-          level: 85,
-        },
-        {
-          name: "Java",
-          icon: <FaCode color="#f89820" />,
-          description: "Object-oriented programming",
-          level: 70,
-        },
-        {
-          name: "Jupyter",
-          icon: <SiJupyter color="#F37626" />,
-          description: "Notebook IDE",
-          level: 80,
-        },
-      ],
-    },
-  ];
-
-  const stats = [
-    {
-      icon: <FaCode />,
-      value: "1+",
-      label: "Years Learning",
-      color: "text-blue-500",
-    },
-    {
-      icon: <FaRocket />,
-      value: "5+",
-      label: "Projects Built",
-      color: "text-green-500",
-    },
-    {
-      icon: <FaHeart />,
-      value: "17+",
-      label: "Technologies Learning",
-      color: "text-red-500",
-    },
-  ];
+  
+  
 
   return (
     <div
       ref={containerRef}
       className="min-h-screen bg-base-100 pt-28 pb-24 px-6 sm:px-10 md:px-20 relative overflow-hidden"
     >
-      {/* Ultra-smooth animated background blobs */}
+      {/* blobs */}
       <div className="fixed inset-0 pointer-events-none z-0 opacity-15">
         {floatingElements.map((el) => (
           <div
@@ -333,7 +139,7 @@ const About = () => {
         ))}
       </div>
 
-      {/* Responsive interactive cursor */}
+    
       {isMouseMoving && (
         <div
           className="fixed w-5 h-5 bg-primary rounded-full pointer-events-none z-30 blur-sm"
@@ -348,7 +154,6 @@ const About = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto space-y-24">
-        {/* Hero Section with Typing Animation */}
         <section className="text-center max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-base-content">
             About{" "}
@@ -370,7 +175,7 @@ const About = () => {
             <strong className="text-secondary"> Data Structures & Algorithms</strong> to strengthen my problem-solving foundation.
           </p>
 
-          {/* Interactive Stats */}
+          {/*  Stats */}
           <div className="grid grid-cols-3 gap-4 mt-12 max-w-lg mx-auto">
             {stats.map((stat, index) => (
               <div
@@ -393,7 +198,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* Interactive Technology Categories */}
+        {/* Technology Categories */}
         <section className="space-y-12">
           <h2 className="text-4xl font-bold text-center text-base-content mb-8">
             My Tech Stack
@@ -416,45 +221,17 @@ const About = () => {
             ))}
           </div>
 
-          {/* Active Category Content with reduced animation delay */}
+          {/* Active Category content */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
             {techCategories[activeCategory].technologies.map((tech, i) => (
-              <div
-                key={i}
-                className="bg-gradient-to-br from-base-200 to-base-100 dark:from-base-300 dark:to-base-200 rounded-2xl p-6 w-full text-center shadow-md hover:shadow-2xl transition-all duration-500 border border-base-300 dark:border-base-600 cursor-pointer group hover:scale-110 hover:-rotate-2"
-                onMouseEnter={() => setHoveredTech(`${activeCategory}-${i}`)}
-                onMouseLeave={() => setHoveredTech(null)}
-                style={{
-                  animationDelay: `${i * 0.05}s`, // Reduced from 0.1s to 0.05s
-                  animation: "slideInUp 0.4s ease-out forwards", // Reduced from 0.6s to 0.4s
-                }}
-              >
-                <div className="text-5xl mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
-                  {tech.icon}
-                </div>
-                <h3 className="font-bold text-base-content mb-2 group-hover:text-primary transition-colors duration-300">
-                  {tech.name}
-                </h3>
-                <p className="text-sm text-base-content/60 mb-4">
-                  {tech.description}
-                </p>
-
-                {/* Skill Level Progress Bar with faster animation */}
-                <div className="w-full bg-base-300 rounded-full h-2 mb-2">
-                  <div
-                    className={`bg-gradient-to-r ${techCategories[activeCategory].color} h-2 rounded-full transition-all duration-600 ease-out`}
-                    style={{
-                      width:
-                        hoveredTech === `${activeCategory}-${i}`
-                          ? `${tech.level}%`
-                          : "0%",
-                    }}
-                  />
-                </div>
-                <span className="text-xs text-base-content/50">
-                  {tech.level}% proficiency
-                </span>
-              </div>
+              <TechCard 
+                key={i} 
+                tech={tech} 
+                activeCategory={activeCategory} 
+                hoveredTech={hoveredTech} 
+                setHoveredTech={setHoveredTech} 
+                i={i}
+              />
             ))}
           </div>
         </section>
@@ -466,101 +243,41 @@ const About = () => {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Internship Certificate */}
-            <div className="group bg-gradient-to-br from-base-200 to-base-100 dark:from-base-300 dark:to-base-200 rounded-2xl p-6 border border-base-300 dark:border-base-600 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1 h-[370px] flex flex-col">
-              <div className="flex flex-col items-center text-center space-y-4 flex-grow">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform duration-300">
-                  🏢
-                </div>
-                <h3 className="text-xl font-bold text-base-content group-hover:text-primary transition-colors duration-300">
-                  Internship Certificate
-                </h3>
-                <p className="text-base-content/70 text-sm leading-relaxed flex-grow">
-                  Professional internship experience at <strong className="text-primary/102">CodeSoft</strong>, showcasing practical skills in real-world projects and collaborative development.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 w-full mt-auto">
-                  <a 
-                    href="/internship.pdf" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="btn btn-primary rounded-full px-6 py-2 text-sm font-semibold hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
-                  >
-                    📄 View Certificate
-                  </a>
-                  <a 
-                    href="/internship.pdf" 
-                    download="Keshav_Internship_Certificate.pdf"
-                    className="btn btn-outline rounded-full px-6 py-2 text-sm font-semibold hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
-                  >
-                    💾 Download
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* MERN Stack Certificate */}
-            <div className="group bg-gradient-to-br from-base-200 to-base-100 dark:from-base-300 dark:to-base-200 rounded-2xl p-6 border border-base-300 dark:border-base-600 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1 h-[370px] flex flex-col">
-              <div className="flex flex-col items-center text-center space-y-4 flex-grow">
-                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform duration-300">
-                  ⚡
-                </div>
-                <h3 className="text-xl font-bold text-base-content group-hover:text-primary transition-colors duration-300">
-                  MERN Stack Development
-                </h3>
-                <p className="text-base-content/70 text-sm leading-relaxed flex-grow">
-                  <strong className="text-primary/102">Udemy</strong> certification covering full-stack web development with MongoDB, Express.js, React.js, and Node.js technologies.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 w-full mt-auto">
-                  <a 
-                    href="/mernstack.pdf" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="btn btn-primary rounded-full px-6 py-2 text-sm font-semibold hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
-                  >
-                    📄 View Certificate
-                  </a>
-                  <a 
-                    href="/mernstack.pdf" 
-                    download="Keshav_MERN_Stack_Certificate.pdf"
-                    className="btn btn-outline rounded-full px-6 py-2 text-sm font-semibold hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
-                  >
-                    💾 Download
-                  </a>
+            {certificates.map((cert) => (
+              <div 
+                key={cert.id}
+                className={`group bg-gradient-to-br from-base-200 to-base-100 dark:from-base-300 dark:to-base-200 rounded-2xl p-6 border border-base-300 dark:border-base-600 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:${cert.hoverRotation} h-[370px] flex flex-col`}
+              >
+                <div className="flex flex-col items-center text-center space-y-4 flex-grow">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${cert.gradient} rounded-full flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform duration-300`}>
+                    {cert.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-base-content group-hover:text-primary transition-colors duration-300">
+                    {cert.title}
+                  </h3>
+                  <p className="text-base-content/70 text-sm leading-relaxed flex-grow">
+                    <strong className="text-primary/102">{cert.organization}</strong> {cert.description}
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3 w-full mt-auto">
+                    <a 
+                      href={cert.pdfUrl}
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="btn btn-primary rounded-full px-6 py-2 text-sm font-semibold hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                    >
+                      📄 View Certificate
+                    </a>
+                    <a 
+                      href={cert.pdfUrl}
+                      download={cert.downloadName}
+                      className="btn btn-outline rounded-full px-6 py-2 text-sm font-semibold hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                    >
+                      💾 Download
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {/* Git Certificate */}
-            <div className="group bg-gradient-to-br from-base-200 to-base-100 dark:from-base-300 dark:to-base-200 rounded-2xl p-6 border border-base-300 dark:border-base-600 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 h-[370px] flex flex-col">
-              <div className="flex flex-col items-center text-center space-y-4 flex-grow">
-                <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform duration-300">
-                  🔧
-                </div>
-                <h3 className="text-xl font-bold text-base-content group-hover:text-primary transition-colors duration-300">
-                  Git & Version Control
-                </h3>
-                <p className="text-base-content/70 text-sm leading-relaxed flex-grow">
-                  <strong className="text-primary/102">Udemy</strong> course certification with comprehensive understanding of Git workflows, branching strategies, and collaborative development practices.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 w-full mt-auto">
-                  <a 
-                    href="/git.pdf" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="btn btn-primary rounded-full px-6 py-2 text-sm font-semibold hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
-                  >
-                    📄 View Certificate
-                  </a>
-                  <a 
-                    href="/git.pdf" 
-                    download="Keshav_Git_Certificate.pdf"
-                    className="btn btn-outline rounded-full px-6 py-2 text-sm font-semibold hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
-                  >
-                    💾 Download
-                  </a>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
 
           
@@ -593,84 +310,33 @@ const About = () => {
             What People Say
           </h2>
 
-          {/* Desktop and Tablet View (2 columns) */}
+         
           <div className="hidden md:flex gap-8 h-150 relative">
-            {/* Left Column - Reviews going up */}
             <div className="flex-1 relative overflow-hidden rounded-2xl">
               <div className="animate-scroll-up space-y-6">
                 {/* First set of reviews */}
-                <ReviewCard
-                  name="Krish Puri"
-                  role="Frontend Developer"
-                  avatar="👩‍💻"
-                  rating={5}
-                  review="Keshav's React skills are impressive! His clean code and attention to detail make him a pleasure to work with."
-                />
-                <ReviewCard
-                  name="Manpreet Singh"
-                  role="Full Stack Developer"
-                  avatar="👨‍💼"
-                  rating={5}
-                  review="Excellent problem-solving abilities and quick learner. Keshav delivered our project ahead of schedule."
-                />
-                <ReviewCard
-                  name="Bhavuk Ahuja"
-                  role="UX Designer"
-                  avatar="👩‍🎨"
-                  rating={5}
-                  review="Great collaboration skills! Keshav perfectly implemented our design vision with smooth animations."
-                />
-                <ReviewCard
-                  name="Gurman Singh Dhami"
-                  role="Mern Stack Developer"
-                  avatar="👨‍💻"
-                  rating={5}
-                  review="Reliable and communicative. Keshav's full-stack expertise helped us build a robust application."
-                />
-                <ReviewCard
-                  name="Rutansh Chawla"
-                  role="Backend Developer"
-                  avatar="👩‍💻"
-                  rating={5}
-                  review="Impressed by Keshav's Node.js and MongoDB skills. His API development is clean and efficient."
-                />
+                {reviews.map((review) => (
+                  <ReviewCard
+                    key={review.id}
+                    name={review.name}
+                    role={review.role}
+                    avatar={review.avatar}
+                    rating={review.rating}
+                    review={review.review}
+                  />
+                ))}
 
                 {/* Duplicate set for seamless loop */}
-                <ReviewCard
-                  name="Krish Puri"
-                  role="Frontend Developer"
-                  avatar="👩‍💻"
-                  rating={5}
-                  review="Keshav's React skills are impressive! His clean code and attention to detail make him a pleasure to work with."
-                />
-                <ReviewCard
-                  name="Manpreet Singh"
-                  role="Full Stack Developer"
-                  avatar="👨‍💼"
-                  rating={5}
-                  review="Excellent problem-solving abilities and quick learner. Keshav delivered our project ahead of schedule."
-                />
-                <ReviewCard
-                  name="Bhavuk Ahuja"
-                  role="UX Designer"
-                  avatar="👩‍🎨"
-                  rating={5}
-                  review="Great collaboration skills! Keshav perfectly implemented our design vision with smooth animations."
-                />
-                <ReviewCard
-                  name="Gurman Singh Dhami"
-                  role="Mern Stack Developer"
-                  avatar="👨‍💻"
-                  rating={5}
-                  review="Reliable and communicative. Keshav's full-stack expertise helped us build a robust application."
-                />
-                <ReviewCard
-                  name="Rutansh Chawla"
-                  role="Backend Developer"
-                  avatar="👩‍💻"
-                  rating={5}
-                  review="Impressed by Keshav's Node.js and MongoDB skills. His API development is clean and efficient."
-                />
+                {reviews.map((review) => (
+                  <ReviewCard
+                    key={`duplicate-${review.id}`}
+                    name={review.name}
+                    role={review.role}
+                    avatar={review.avatar}
+                    rating={review.rating}
+                    review={review.review}
+                  />
+                ))}
               </div>
               
               {/* Column-specific fade overlays */}
@@ -682,78 +348,28 @@ const About = () => {
             <div className="flex-1 relative overflow-hidden rounded-2xl">
               <div className="animate-scroll-down space-y-6">
                 {/* First set of reviews */}
-                <ReviewCard
-                  name="Krish Puri"
-                  role="Frontend Developer"
-                  avatar="👩‍💻"
-                  rating={5}
-                  review="Keshav's React skills are impressive! His clean code and attention to detail make him a pleasure to work with."
-                />
-                <ReviewCard
-                  name="Manpreet Singh"
-                  role="Full Stack Developer"
-                  avatar="👨‍💼"
-                  rating={5}
-                  review="Excellent problem-solving abilities and quick learner. Keshav delivered our project ahead of schedule."
-                />
-                <ReviewCard
-                  name="Bhavuk Ahuja"
-                  role="UX Designer"
-                  avatar="👩‍🎨"
-                  rating={5}
-                  review="Great collaboration skills! Keshav perfectly implemented our design vision with smooth animations."
-                />
-                <ReviewCard
-                  name="Gurman Singh Dhami"
-                  role="Mern Stack Developer"
-                  avatar="👨‍💻"
-                  rating={5}
-                  review="Reliable and communicative. Keshav's full-stack expertise helped us build a robust application."
-                />
-                <ReviewCard
-                  name="Rutansh Chawla"
-                  role="Backend Developer"
-                  avatar="👩‍💻"
-                  rating={5}
-                  review="Impressed by Keshav's Node.js and MongoDB skills. His API development is clean and efficient."
-                />
+                {reviews.map((review) => (
+                  <ReviewCard
+                    key={review.id}
+                    name={review.name}
+                    role={review.role}
+                    avatar={review.avatar}
+                    rating={review.rating}
+                    review={review.review}
+                  />
+                ))}
 
                 {/* Duplicate set for seamless loop */}
-                <ReviewCard
-                  name="Krish Puri"
-                  role="Frontend Developer"
-                  avatar="👩‍💻"
-                  rating={5}
-                  review="Keshav's React skills are impressive! His clean code and attention to detail make him a pleasure to work with."
-                />
-                <ReviewCard
-                  name="Manpreet Singh"
-                  role="Full Stack Developer"
-                  avatar="👨‍💼"
-                  rating={5}
-                  review="Excellent problem-solving abilities and quick learner. Keshav delivered our project ahead of schedule."
-                />
-                <ReviewCard
-                  name="Bhavuk Ahuja"
-                  role="UX Designer"
-                  avatar="👩‍🎨"
-                  rating={5}
-                  review="Great collaboration skills! Keshav perfectly implemented our design vision with smooth animations."
-                />
-                <ReviewCard
-                  name="Gurman Singh Dhami"
-                  role="Mern Stack Developer"
-                  avatar="👨‍💻"
-                  rating={5}
-                  review="Reliable and communicative. Keshav's full-stack expertise helped us build a robust application."
-                />
-                <ReviewCard
-                  name="Rutansh Chawla"
-                  role="Backend Developer"
-                  avatar="👩‍💻"
-                  rating={5}
-                  review="Impressed by Keshav's Node.js and MongoDB skills. His API development is clean and efficient."
-                />
+                {reviews.map((review) => (
+                  <ReviewCard
+                    key={`duplicate-${review.id}`}
+                    name={review.name}
+                    role={review.role}
+                    avatar={review.avatar}
+                    rating={review.rating}
+                    review={review.review}
+                  />
+                ))}
               </div>
               
               {/* Column-specific fade overlays */}
@@ -767,78 +383,28 @@ const About = () => {
             <div className="relative overflow-hidden h-140 rounded-2xl">
               <div className="animate-scroll-up-mobile space-y-4">
                 {/* All reviews in single column for mobile */}
-                <ReviewCard
-                  name="Krish Puri"
-                  role="Frontend Developer"
-                  avatar="👩‍💻"
-                  rating={5}
-                  review="Keshav's React skills are impressive! His clean code and attention to detail make him a pleasure to work with."
-                />
-                <ReviewCard
-                  name="Manpreet Singh"
-                  role="Full Stack Developer"
-                  avatar="👨‍💼"
-                  rating={5}
-                  review="Excellent problem-solving abilities and quick learner. Keshav delivered our project ahead of schedule."
-                />
-                <ReviewCard
-                  name="Bhavuk Ahuja"
-                  role="UX Designer"
-                  avatar="👩‍🎨"
-                  rating={5}
-                  review="Great collaboration skills! Keshav perfectly implemented our design vision with smooth animations."
-                />
-                <ReviewCard
-                  name="Gurman Singh Dhami"
-                  role="Mern Stack Developer"
-                  avatar="👨‍💻"
-                  rating={5}
-                  review="Reliable and communicative. Keshav's full-stack expertise helped us build a robust application."
-                />
-                <ReviewCard
-                  name="Rutansh Chawla"
-                  role="Backend Developer"
-                  avatar="👩‍💻"
-                  rating={5}
-                  review="Impressed by Keshav's Node.js and MongoDB skills. His API development is clean and efficient."
-                />
+                {reviews.map((review) => (
+                  <ReviewCard
+                    key={review.id}
+                    name={review.name}
+                    role={review.role}
+                    avatar={review.avatar}
+                    rating={review.rating}
+                    review={review.review}
+                  />
+                ))}
 
                 {/* Duplicate set for seamless loop */}
-                <ReviewCard
-                  name="Krish Puri"
-                  role="Frontend Developer"
-                  avatar="👩‍💻"
-                  rating={5}
-                  review="Keshav's React skills are impressive! His clean code and attention to detail make him a pleasure to work with."
-                />
-                <ReviewCard
-                  name="Manpreet Singh"
-                  role="Full Stack Developer"
-                  avatar="👨‍💼"
-                  rating={5}
-                  review="Excellent problem-solving abilities and quick learner. Keshav delivered our project ahead of schedule."
-                />
-                <ReviewCard
-                  name="Bhavuk Ahuja"
-                  role="UX Designer"
-                  avatar="👩‍🎨"
-                  rating={5}
-                  review="Great collaboration skills! Keshav perfectly implemented our design vision with smooth animations."
-                />
-                <ReviewCard
-                  name="Gurman Singh Dhami"
-                  role="Mern Stack Developer"
-                  avatar="👨‍💻"
-                  rating={5}
-                  review="Reliable and communicative. Keshav's full-stack expertise helped us build a robust application."
-                />
-                <ReviewCard
-                  name="Rutansh Chawla"
-                  role="Backend Developer"
-                  avatar="👩‍💻"
-                  rating={5}
-                  review="Impressed by Keshav's Node.js and MongoDB skills. His API development is clean and efficient."
-                />
+                {reviews.map((review) => (
+                  <ReviewCard
+                    key={`mobile-duplicate-${review.id}`}
+                    name={review.name}
+                    role={review.role}
+                    avatar={review.avatar}
+                    rating={review.rating}
+                    review={review.review}
+                  />
+                ))}
               </div>
               
               {/* Mobile fade overlays */}
@@ -875,7 +441,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* Interactive CTA */}
+        {/* CTA */}
         <section className="text-center max-w-3xl mx-auto">
           <div className="bg-gradient-to-br from-base-200 to-base-100 dark:from-base-300 dark:to-base-200 rounded-3xl p-12 border shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105">
             <h2 className="text-3xl font-bold mb-6 text-base-content">
@@ -907,7 +473,7 @@ const About = () => {
         </section>
       </div>
 
-      {/* Ultra-smooth CSS animations */}
+     
       <style jsx>{`
         @keyframes ultraSmoothFloat {
           0%,

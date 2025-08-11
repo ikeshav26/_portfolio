@@ -47,21 +47,21 @@ const Home = () => {
     };
   }, []);
 
-  // Reduce number of floating cards and memoize them
+
   const floatingCards = useMemo(() => {
     return Array.from({ length: 8 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
-      delay: Math.random() * 5, // Reduced delay range
-      duration: 20 + Math.random() * 10, // Slower animations
+      delay: Math.random() * 5,
+      duration: 20 + Math.random() * 10,
       scale: 0.6 + Math.random() * 0.4,
     }));
   }, []);
 
-  // Memoize GitHub image URLs to prevent constant regeneration
+
   const githubImageUrls = useMemo(() => ({
-    dark: `https://raw.githubusercontent.com/ikeshav26/ikeshav26/output/github-contribution-grid-snake-dark.svg?t=${Math.floor(Date.now() / 60000)}`, // Update every minute instead of every render
+    dark: `https://raw.githubusercontent.com/ikeshav26/ikeshav26/output/github-contribution-grid-snake-dark.svg?t=${Math.floor(Date.now() / 60000)}`, 
     light: `https://raw.githubusercontent.com/ikeshav26/ikeshav26/output/github-contribution-grid-snake.svg?t=${Math.floor(Date.now() / 60000)}`
   }), []);
 
@@ -72,14 +72,14 @@ const Home = () => {
         {floatingCards.map((card) => (
           <div
             key={card.id}
-            className="absolute opacity-20 dark:opacity-10" // Reduced opacity
+            className="absolute opacity-20 dark:opacity-10" 
             style={{
               left: `${card.x}%`,
               top: `${card.y}%`,
               transform: `scale(${card.scale})`,
               animation: `float ${card.duration}s ease-in-out infinite`,
               animationDelay: `${card.delay}s`,
-              willChange: 'transform', // Optimize for transform changes
+              willChange: 'transform',
             }}
           >
             <div className="w-32 h-24 bg-gradient-to-br from-primary to-secondary rounded-xl shadow-lg blur-sm"></div>
@@ -87,9 +87,9 @@ const Home = () => {
         ))}
       </div>
 
-      {/* Optimized Mouse Follower */}
+     
       <div
-        className="fixed w-8 h-8 bg-primary rounded-full pointer-events-none z-10 opacity-50 blur-sm" // Reduced size and opacity
+        className="fixed w-8 h-8 bg-primary rounded-full pointer-events-none z-10 opacity-50 blur-sm" 
         style={{
           left: mousePosition.x - 16,
           top: mousePosition.y - 16,
@@ -234,7 +234,7 @@ const Home = () => {
                 src={theme === 'dark' ? githubImageUrls.dark : githubImageUrls.light}
                 alt={`GitHub Snake ${theme === 'dark' ? 'Dark' : 'Light'}`}
                 className="w-full"
-                loading="lazy" // Add lazy loading
+                loading="lazy" 
                 onError={(e) => {
                   e.target.style.display = "none";
                   document.getElementById("fallback-message").style.display = "block";
@@ -296,9 +296,9 @@ const Home = () => {
                 <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
               </svg>
             </div>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-secondary mb-2">1+</h3>
+            <h3 className="text-3xl md:text-4xl font-extrabold text-secondary mb-2">8+</h3>
             <p className="text-base-content/70 font-medium text-sm md:text-base">
-              Years of Innovation
+              Months of Innovation
             </p>
           </div>
 
