@@ -65,3 +65,140 @@
   font-style: normal;
 }
 
+/* About Page Animations and Styles */
+@keyframes ultraSmoothFloat {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) scale(1.02) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.05) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-6px) scale(1.02) rotate(-1deg);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scroll-down {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll-up-mobile {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-60%);
+  }
+}
+
+.animate-scroll-up {
+  animation: scroll-up 30s linear infinite;
+}
+
+.animate-scroll-down {
+  animation: scroll-down 30s linear infinite;
+}
+
+.animate-scroll-up-mobile {
+  animation: scroll-up-mobile 25s linear infinite;
+}
+
+.hover\:shadow-3xl:hover {
+  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+}
+
+@layer base {
+  /* Custom scrollbar styles */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #a0aec0 transparent;
+  }
+
+  html::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  html::-webkit-scrollbar-thumb {
+    background-color: #a0aec0;
+    border-radius: 9999px;
+  }
+
+  html::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+
+@layer components {
+  /* Card component */
+  .card {
+    @apply bg-base-200 dark:bg-base-700 rounded-2xl shadow-md overflow-hidden;
+  }
+
+  .card-header {
+    @apply bg-gradient-to-r from-primary to-secondary p-4 rounded-t-2xl;
+  }
+
+  .card-title {
+    @apply text-xl font-bold text-white;
+  }
+
+  .card-content {
+    @apply p-4 text-base-content;
+  }
+
+  /* Button component */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white shadow-md hover:shadow-lg;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white;
+  }
+}
+
+@layer utilities {
+  /* Custom utility for text gradient */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  /* Custom utility for background gradient */
+  .bg-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary;
+  }
+}
+

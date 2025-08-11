@@ -8,6 +8,7 @@ import { stats } from "../assets/assets";
 import { certificates } from "../assets/assets";
 import { reviews } from "../assets/assets";
 import TechCard from "../components/TechCard";
+import CertificateCard from "../components/CertificateCard";
 
 const About = () => {
   const [activeCategory, setActiveCategory] = useState(0);
@@ -244,39 +245,7 @@ const About = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {certificates.map((cert) => (
-              <div 
-                key={cert.id}
-                className={`group bg-gradient-to-br from-base-200 to-base-100 dark:from-base-300 dark:to-base-200 rounded-2xl p-6 border border-base-300 dark:border-base-600 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:${cert.hoverRotation} h-[370px] flex flex-col`}
-              >
-                <div className="flex flex-col items-center text-center space-y-4 flex-grow">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${cert.gradient} rounded-full flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform duration-300`}>
-                    {cert.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-base-content group-hover:text-primary transition-colors duration-300">
-                    {cert.title}
-                  </h3>
-                  <p className="text-base-content/70 text-sm leading-relaxed flex-grow">
-                    <strong className="text-primary/102">{cert.organization}</strong> {cert.description}
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-3 w-full mt-auto">
-                    <a 
-                      href={cert.pdfUrl}
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="btn btn-primary rounded-full px-6 py-2 text-sm font-semibold hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
-                    >
-                      📄 View Certificate
-                    </a>
-                    <a 
-                      href={cert.pdfUrl}
-                      download={cert.downloadName}
-                      className="btn btn-outline rounded-full px-6 py-2 text-sm font-semibold hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
-                    >
-                      💾 Download
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <CertificateCard key={cert.id} cert={cert} />
             ))}
           </div>
 
@@ -472,147 +441,6 @@ const About = () => {
           </div>
         </section>
       </div>
-
-     
-      <style jsx>{`
-        @keyframes ultraSmoothFloat {
-          0%,
-          100% {
-            transform: translateY(0px) scale(1) rotate(0deg);
-          }
-          25% {
-            transform: translateY(-8px) scale(1.02) rotate(1deg);
-          }
-          50% {
-            transform: translateY(-15px) scale(1.05) rotate(0deg);
-          }
-          75% {
-            transform: translateY(-6px) scale(1.02) rotate(-1deg);
-          }
-        }
-
-        @keyframes slideInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px) scale(0.95);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-          }
-        }
-
-        @keyframes scroll-up {
-          0% {
-            transform: translateY(0);
-          }
-          100% {
-            transform: translateY(-50%);
-          }
-        }
-
-        @keyframes scroll-down {
-          0% {
-            transform: translateY(-50%);
-          }
-          100% {
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes scroll-up-mobile {
-          0% {
-            transform: translateY(0);
-          }
-          100% {
-            transform: translateY(-60%);
-          }
-        }
-
-        .animate-scroll-up {
-          animation: scroll-up 30s linear infinite;
-        }
-
-        .animate-scroll-down {
-          animation: scroll-down 30s linear infinite;
-        }
-
-        .animate-scroll-up-mobile {
-          animation: scroll-up-mobile 25s linear infinite;
-        }
-
-        .hover\:shadow-3xl:hover {
-          box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
-        }
-
-        @tailwind utilities;
-
-        @layer base {
-          /* Custom scrollbar styles */
-          html {
-            scrollbar-width: thin;
-            scrollbar-color: #a0aec0 transparent;
-          }
-
-          html::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-          }
-
-          html::-webkit-scrollbar-thumb {
-            background-color: #a0aec0;
-            border-radius: 9999px;
-          }
-
-          html::-webkit-scrollbar-track {
-            background-color: transparent;
-          }
-        }
-
-        @layer components {
-          /* Card component */
-          .card {
-            @apply bg-base-200 dark:bg-base-700 rounded-2xl shadow-md overflow-hidden;
-          }
-
-          .card-header {
-            @apply bg-gradient-to-r from-primary to-secondary p-4 rounded-t-2xl;
-          }
-
-          .card-title {
-            @apply text-xl font-bold text-white;
-          }
-
-          .card-content {
-            @apply p-4 text-base-content;
-          }
-
-          /* Button component */
-          .btn {
-            @apply inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300;
-          }
-
-          .btn-primary {
-            @apply bg-primary text-white shadow-md hover:shadow-lg;
-          }
-
-          .btn-outline {
-            @apply border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white;
-          }
-        }
-
-        @layer utilities {
-          /* Custom utility for text gradient */
-          .text-gradient {
-            @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
-          }
-
-          /* Custom utility for background gradient */
-          .bg-gradient {
-            @apply bg-gradient-to-r from-primary to-secondary;
-          }
-        }
-      `}</style>
     </div>
   );
 };
