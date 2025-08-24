@@ -5,7 +5,6 @@ import { blogPosts } from "../assets/assets";
 import BlogCard from "../components/BlogCard";
 
 const Blogs = () => {
-  const [hoveredPost, setHoveredPost] = useState(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isMouseMoving, setIsMouseMoving] = useState(false);
 

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const BlogCard = ({ post, index }) => {
+  const [hoveredPost, setHoveredPost] = useState(null);
   return (
     <div>
       <motion.article
@@ -16,7 +17,7 @@ const BlogCard = ({ post, index }) => {
         onMouseEnter={() => setHoveredPost(post.id)}
         onMouseLeave={() => setHoveredPost(null)}
       >
-        <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-base-100 z-20 shadow-lg" />
+        <div className="absolute bottom-10 left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-base-100 z-20 shadow-lg" />
 
         <div
           className={`relative z-10 bg-gradient-to-br from-base-200 to-base-100 dark:from-base-300 dark:to-base-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-base-300 dark:border-base-600 cursor-pointer group hover:scale-[1.02] ${
