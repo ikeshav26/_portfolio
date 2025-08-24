@@ -16,6 +16,7 @@ import {
   FaTwitter,
   FaInstagram,
   FaHandshake,
+  FaUpload,
 } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 import {
@@ -28,6 +29,7 @@ import {
   SiExpress,
   SiGooglecloud,
   SiStreamlit,
+  SiCloudinary,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
@@ -305,6 +307,38 @@ export const reviews = [
 export const projects = [
   {
     id: 1,
+    title: "Echovia",
+    description:
+      "A modern music streaming platform where users can explore, manage, and enjoy their playlists. Built with MERN stack and Cloudinary for storage.",
+    longDescription:
+      "Echovia is a feature-rich music streaming application that lets users discover songs, create playlists, and enjoy a seamless listening experience. It uses the MERN stack with Cloudinary integration for music hosting, and provides an intuitive, responsive interface for music lovers.",
+    category: "fullstack",
+    type: "Personal Project",
+    techStack: [
+      { name: "React", icon: <FaReact color="#61DAFB" /> },
+      { name: "Node.js", icon: <FaNodeJs color="#3C873A" /> },
+      { name: "Express", icon: <SiExpress className="color-base-content" /> },
+      { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
+      { name: "TailwindCSS", icon: <SiTailwindcss color="#38BDF8" /> },
+      { name: "Cloudinary", icon: <SiCloudinary color="#3448C5" /> },
+      { name: "Multer", icon: <FaUpload color="#E91E63" /> },
+    ],
+    features: [
+      "User Authentication & Profiles",
+      "Admin Song Upload & Cloudinary Integration",
+      "Playlist || Album Creation & Management",
+      "Search & Song Discovery",
+      "Responsive & Modern UI",
+    ],
+    github: "https://github.com/ikeshav26/echovia-music-player",
+    live: "https://echovia-music-player.vercel.app",
+    image:
+      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&h=400&fit=crop",
+    status: "Completed",
+    teamSize: "Solo",
+  },
+  {
+    id: 2,
     title: "Auto PR Reviewer",
     description:
       "An intelligent GitHub Actions-powered tool that leverages AI to automatically review pull requests, analyze code quality, and provide detailed feedback.",
@@ -315,7 +349,10 @@ export const projects = [
     techStack: [
       { name: "Node.js", icon: <FaNodeJs color="#3C873A" /> },
       { name: "Express", icon: <SiExpress className="color-base-content" /> },
-      { name: "GitHub Actions", icon: <FaGithub className="color-base-content" /> },
+      {
+        name: "GitHub Actions",
+        icon: <FaGithub className="color-base-content" />,
+      },
       { name: "Gemini AI", icon: <SiGooglecloud color="#4285F4" /> },
       { name: "OpenAI", icon: <SiOpenai color="#412991" /> },
     ],
@@ -331,12 +368,13 @@ export const projects = [
     ],
     github: "https://github.com/ikeshav26/auto_pr_reviewer",
     live: "https://github.com/ikeshav26/auto_pr_reviewer",
-    image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=600&h=400&fit=crop&q=80",
+    image:
+      "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=600&h=400&fit=crop&q=80",
     status: "Completed",
     teamSize: "Solo",
   },
   {
-    id: 2,
+    id: 3,
     title: "ElevateCV-AI",
     description:
       "An AI-powered resume and cover letter generator with interview preparation features built using modern full-stack technologies.",
@@ -366,39 +404,6 @@ export const projects = [
     github: "https://github.com/ikeshav26/elevatecv-ai",
     live: "https://elevatecv-ai.ikeshav.tech",
     image: "/elevateCV.png",
-    status: "Completed",
-    teamSize: "Solo",
-  },
-  {
-    id: 3,
-    title: "Bit-Blog",
-    description:
-      "A modern blogging platform built with MERN stack where users can create, explore, and manage their blogs. Features rich text editor, user authentication, and social interactions.",
-    longDescription:
-      "Bit-Blog is a full-featured blogging platform that empowers users to share their thoughts and stories. Built with the MERN stack, it offers a seamless writing experience with a rich text editor, user profiles, blog discovery, and engagement features like comments and likes.",
-    category: "fullstack",
-    type: "Personal Project",
-    techStack: [
-      { name: "React", icon: <FaReact color="#61DAFB" /> },
-      { name: "Node.js", icon: <FaNodeJs color="#3C873A" /> },
-      {
-        name: "Express",
-        icon: <SiExpress className="color-base-content" />,
-      },
-      { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
-      { name: "TailwindCSS", icon: <SiTailwindcss color="#38BDF8" /> },
-    ],
-    features: [
-      "Rich Text Blog Editor",
-      "User Authentication & Profiles",
-      "Blog Discovery & Search",
-      "Comments & Social Features",
-      "Responsive Design",
-    ],
-    github: "https://github.com/ikeshav26/blog-app",
-    live: "https://bitblog.ikeshav.tech",
-    image:
-      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
     status: "Completed",
     teamSize: "Solo",
   },
@@ -433,7 +438,7 @@ export const projects = [
       "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop",
     status: "Completed",
     teamSize: "6 Members",
-  }
+  },
 ];
 
 //blog-page
@@ -481,32 +486,32 @@ export const blogPosts = [
     ],
   },
   {
-  id: 2,
-  title: "Auto PR Reviewer",
-  excerpt:
-    "Automatically reviews Pull Requests using AI. Fetches PR diffs and generates intelligent review comments directly on GitHub.",
-  fullDescription:
-    "Auto PR Reviewer is a GitHub Action-based tool that uses AI (Gemini or OpenAI) to automatically review pull requests. It fetches code changes from PRs, sends them to the AI model, and posts detailed code review comments directly on the PR. It helps developers get instant AI-powered code feedback and improves code quality and collaboration. The project demonstrates seamless integration of AI with GitHub workflows and automation.",
-  date: "2025-08-15",
-  readTime: "5 min read",
-  image: "🤖",
-  tags: ["GitHub Actions", "AI Review", "Automation", "Gemini AI", "OpenAI"],
-  techStack: ["Node.js", "Express", "GitHub Actions", "Gemini AI / OpenAI"],
-  challenges: [
-    "Fetching PR diffs from GitHub API",
-    "Handling AI API integration (Gemini/OpenAI)",
-    "Automating PR comments reliably",
-  ],
-  achievements: [
-    "Automated PR review comments",
-    "Seamless GitHub Actions integration",
-    "Supports multiple AI APIs",
-  ],
-  github: "https://github.com/ikeshav26/auto-pr_reviewer",
-  live: "https://github.com/ikeshav26/auto-pr_reviewer",
-  status: "Completed",
-  teamSize: "Solo",
-},
+    id: 2,
+    title: "Auto PR Reviewer",
+    excerpt:
+      "Automatically reviews Pull Requests using AI. Fetches PR diffs and generates intelligent review comments directly on GitHub.",
+    fullDescription:
+      "Auto PR Reviewer is a GitHub Action-based tool that uses AI (Gemini or OpenAI) to automatically review pull requests. It fetches code changes from PRs, sends them to the AI model, and posts detailed code review comments directly on the PR. It helps developers get instant AI-powered code feedback and improves code quality and collaboration. The project demonstrates seamless integration of AI with GitHub workflows and automation.",
+    date: "2025-08-15",
+    readTime: "5 min read",
+    image: "🤖",
+    tags: ["GitHub Actions", "AI Review", "Automation", "Gemini AI", "OpenAI"],
+    techStack: ["Node.js", "Express", "GitHub Actions", "Gemini AI / OpenAI"],
+    challenges: [
+      "Fetching PR diffs from GitHub API",
+      "Handling AI API integration (Gemini/OpenAI)",
+      "Automating PR comments reliably",
+    ],
+    achievements: [
+      "Automated PR review comments",
+      "Seamless GitHub Actions integration",
+      "Supports multiple AI APIs",
+    ],
+    github: "https://github.com/ikeshav26/auto-pr_reviewer",
+    live: "https://github.com/ikeshav26/auto-pr_reviewer",
+    status: "Completed",
+    teamSize: "Solo",
+  },
   {
     id: 3,
     title: "BitBlog: A Full-Stack Blog Platform with Auth & Admin Panel",
