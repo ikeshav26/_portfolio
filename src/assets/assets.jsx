@@ -446,6 +446,64 @@ export const projects = [
 export const blogPosts = [
   {
     id: 1,
+    title: "Echovia: A MERN Music Streaming Platform with Albums & Playlists",
+    excerpt:
+      "A modern MERN-based music player with playlist management, Cloudinary integration, and a responsive UI.",
+    fullDescription:
+      "Echovia is a full-featured music streaming platform I built using the MERN stack. It allows users to upload songs (via Multer + Cloudinary), create and manage playlists, and explore tracks through search and discovery. The app includes user authentication, a clean music player UI, and responsive design for all devices. I focused on building scalable REST APIs, MongoDB schema design for songs/playlists, and seamless integration with Cloudinary for media storage. Deployed on Vercel and Render, Echovia delivers a smooth and engaging listening experience.",
+    date: "2025-01-15",
+    readTime: "12 min read",
+    image: "🎵",
+    tags: ["MERN", "Music Player", "Cloudinary", "Playlists"],
+    techStack: [
+      "MongoDB",
+      "Express.js",
+      "React",
+      "Node.js",
+      "Multer",
+      "Cloudinary",
+    ],
+    challenges: [
+      "File upload & streaming integration",
+      "Playlist management logic",
+      "Responsive and user-friendly player UI",
+      "Production errors & deployment issues",
+    ],
+    achievements: [
+      "Playlist creation & management",
+      "Cloudinary + Multer integration",
+      "Modern responsive music player",
+    ],
+  },
+  {
+    id: 2,
+    title: "Auto PR Reviewer",
+    excerpt:
+      "Automatically reviews Pull Requests using AI. Fetches PR diffs and generates intelligent review comments directly on GitHub.",
+    fullDescription:
+      "Auto PR Reviewer is a GitHub Action-based tool that uses AI (Gemini or OpenAI) to automatically review pull requests. It fetches code changes from PRs, sends them to the AI model, and posts detailed code review comments directly on the PR. It helps developers get instant AI-powered code feedback and improves code quality and collaboration. The project demonstrates seamless integration of AI with GitHub workflows and automation.",
+    date: "2025-08-15",
+    readTime: "5 min read",
+    image: "🤖",
+    tags: ["GitHub Actions", "AI Review", "Automation", "Gemini AI", "OpenAI"],
+    techStack: ["Node.js", "Express", "GitHub Actions", "Gemini AI / OpenAI"],
+    challenges: [
+      "Fetching PR diffs from GitHub API",
+      "Handling AI API integration (Gemini/OpenAI)",
+      "Automating PR comments reliably",
+    ],
+    achievements: [
+      "Automated PR review comments",
+      "Seamless GitHub Actions integration",
+      "Supports multiple AI APIs",
+    ],
+    github: "https://github.com/ikeshav26/auto-pr_reviewer",
+    live: "https://github.com/ikeshav26/auto-pr_reviewer",
+    status: "Completed",
+    teamSize: "Solo",
+  },
+  {
+    id: 3,
     title: "ElevateCV-AI: AI-Powered Resume, Letter & Interview Generator",
     excerpt:
       "A revolutionary Gen-AI platform that transforms career preparation with intelligent resume generation, cover letter creation, and AI-driven interview coaching using Google Gemini API.",
@@ -484,52 +542,6 @@ export const blogPosts = [
       "Seamless Gen-AI integration",
       "Professional document creation",
     ],
-  },
-  {
-    id: 2,
-    title: "Auto PR Reviewer",
-    excerpt:
-      "Automatically reviews Pull Requests using AI. Fetches PR diffs and generates intelligent review comments directly on GitHub.",
-    fullDescription:
-      "Auto PR Reviewer is a GitHub Action-based tool that uses AI (Gemini or OpenAI) to automatically review pull requests. It fetches code changes from PRs, sends them to the AI model, and posts detailed code review comments directly on the PR. It helps developers get instant AI-powered code feedback and improves code quality and collaboration. The project demonstrates seamless integration of AI with GitHub workflows and automation.",
-    date: "2025-08-15",
-    readTime: "5 min read",
-    image: "🤖",
-    tags: ["GitHub Actions", "AI Review", "Automation", "Gemini AI", "OpenAI"],
-    techStack: ["Node.js", "Express", "GitHub Actions", "Gemini AI / OpenAI"],
-    challenges: [
-      "Fetching PR diffs from GitHub API",
-      "Handling AI API integration (Gemini/OpenAI)",
-      "Automating PR comments reliably",
-    ],
-    achievements: [
-      "Automated PR review comments",
-      "Seamless GitHub Actions integration",
-      "Supports multiple AI APIs",
-    ],
-    github: "https://github.com/ikeshav26/auto-pr_reviewer",
-    live: "https://github.com/ikeshav26/auto-pr_reviewer",
-    status: "Completed",
-    teamSize: "Solo",
-  },
-  {
-    id: 3,
-    title: "BitBlog: A Full-Stack Blog Platform with Auth & Admin Panel",
-    excerpt:
-      "A powerful MERN-based blog system with rich text editing, user roles, JWT auth, and custom admin dashboard.",
-    fullDescription:
-      "BitBlog is a complete blogging platform I built using the MERN stack. It features user registration/login with secure JWT authentication, a rich text editor for writing articles, and a role-based admin panel for managing posts and users. I focused on building RESTful APIs, MongoDB schema design, and clean React UI with conditional rendering for admin vs normal users. Deployed on Vercel and Render, BitBlog also includes responsive design and optimized performance.",
-    date: "2024-12-10",
-    readTime: "10 min read",
-    image: "📝",
-    tags: ["MERN", "Authentication", "Blog System", "JWT"],
-    techStack: ["MongoDB", "Express.js", "React", "Node.js", "JWT"],
-    challenges: [
-      "Role-based access control",
-      "Token security implementation",
-      "Post management UI",
-    ],
-    achievements: ["Admin dashboard", "Rich-text editor", "JWT authentication"],
   },
   {
     id: 4,
