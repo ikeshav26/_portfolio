@@ -142,9 +142,9 @@ const App = () => {
           ))}
           
           <footer className="pt-4 flex items-center justify-between px-2 text-zinc-800 font-black uppercase tracking-[0.3em] text-[10px]">
-             <span>Designed in 2025</span>
+             <span></span>
              <div className="flex gap-4">
-               <span className="hover:text-zinc-600 cursor-pointer transition-colors">Privacy</span>
+               <span className="hover:text-zinc-600 cursor-pointer transition-colors">Designed in 2025</span>
              </div>
           </footer>
         </main>
